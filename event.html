@@ -9,38 +9,99 @@
 </head>
 <body>
     
-<!-- navbar -->
-<nav class="bg-white border-gray-200 dark:bg-green-900">
-  <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto pl-8 pr-8 pb-4 pt-4">
+<!-- Navbar -->
+<nav class="bg-green-900 border-gray-200">
+  <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto px-4 py-3">
+    
+    <!-- Logo + Text -->
     <a href="index.html" class="flex items-center space-x-3 rtl:space-x-reverse">
-        <img src="source/foto/logo.png" class="h-14" alt="Majelis Logo" />
-        <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Majelsi Ar-Raudhah</span>
+      <img src="source/foto/logo.png" class="h-10" alt="Logo" />
+      <span class="self-center text-2xl font-semibold text-white whitespace-nowrap">Majelis Ar-Raudhah</span>
     </a>
-    <button data-collapse-toggle="navbar-default" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-default" aria-expanded="false">
-        <span class="sr-only">Open main menu</span>
-        <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
-            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
-        </svg>
+
+    <!-- Toggle Button (Mobile) -->
+    <button data-collapse-toggle="navbar-default" type="button"
+      class="inline-flex items-center p-2 w-10 h-10 justify-center text-white rounded-lg md:hidden hover:bg-green-800 focus:outline-none focus:ring-2 focus:ring-green-500"
+      aria-controls="navbar-default" aria-expanded="false">
+      <span class="sr-only">Open main menu</span>
+      <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+          d="M1 1h15M1 7h15M1 13h15" />
+      </svg>
     </button>
+
+    <!-- Menu -->
     <div class="hidden w-full md:block md:w-auto" id="navbar-default">
-      <ul class="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-white dark:bg-green-900 md:dark:bg-green-900 dark:border-gray-700">
+      <ul
+        class="font-medium flex flex-col p-4 md:p-0 mt-4 rounded-lg md:space-x-10 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-green-900 bg-green-800">
         <li>
-          <a href="index.html" class="block py-2 px-3 text-white bg-blue-700 rounded-sm md:bg-transparent md:text-blue-700 md:p-0 dark:text-white md:dark:text-white" aria-current="page">Beranda</a>
+          <a href="index.html"
+            class="block py-2 px-3 text-white hover:text-green-300 md:p-0">Beranda</a>
         </li>
         <li>
-          <a href="talent.html" class="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-white md:p-0 dark:text-white md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Talent</a>
+          <a href="talent.html"
+            class="block py-2 px-3 text-white hover:text-green-300 md:p-0">Talent</a>
         </li>
         <li>
-          <a href="event.html" class="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-ehite md:p-0 dark:text-white md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Kegiatan</a>
+          <a href="event.html"
+            class="block py-2 px-3 text-white hover:text-green-300 md:p-0">Kegiatan</a>
         </li>
       </ul>
     </div>
   </div>
 </nav>
-<!-- navbar -->
+
+
+<!-- End Navbar -->
 
 <!--Kegiatan-->
 
+
+<div class="mt-12 max-w-sm bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-white dark:border-amber-700">
+    <a href="#">
+        <img class="rounded-t-lg" src="/source/foto/kegiatan-1.jpeg" alt="" />
+    </a>
+    <div class="p-5">
+        <a href="#">
+            <h5 class="mb-2 text-2xl font-bold tracking-tight text-white dark:text-amber-500">Rutinan Pembacaan Sholawat Diba' bersama Majelis Ta'lim dan Sholawat Ar-Raudhah Sidoarjo. </h5>
+        </a>
+        <p class="mb-3 font-normal text-black dark:text-black">
+            > Hari : Setiap Jum'at, Minggu Pertama <br>
+            > Waktu : 19.00 - Selesai. (Ba'da Sholat Isya) <br>
+            > Tempat : Masjid At-Tadzkiroh PWI 2. <br>
+
+        </p>
+        <a href="#" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-amber-500 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-amber-500 dark:hover:bg-amber-800 dark:focus:ring-amber-800">
+            Read More
+             <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
+            </svg>
+        </a>
+    </div>
+</div>
+
+<div class="mt-12 max-w-sm bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-white dark:border-amber-700">
+    <a href="#">
+        <img class="rounded-t-lg" src="/source/foto/kegiatan-1.jpeg" alt="" />
+    </a>
+    <div class="p-5">
+        <a href="#">
+            <h5 class="mb-2 text-2xl font-bold tracking-tight text-white dark:text-amber-500">Rutinan Pembacaan Sholawat Diba' bersama Majelis Ta'lim dan Sholawat Ar-Raudhah Sidoarjo. </h5>
+        </a>
+        <p class="mb-3 font-normal text-black dark:text-black">
+            > Hari : Setiap Jum'at, Minggu Pertama <br>
+            > Waktu : 19.00 - Selesai. (Ba'da Sholat Isya) <br>
+            > Tempat : Masjid At-Tadzkiroh PWI 2. <br>
+
+        </p>
+        <a href="#" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-amber-500 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-amber-500 dark:hover:bg-amber-800 dark:focus:ring-amber-800">
+            Read More
+             <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
+            </svg>
+        </a>
+    </div>
+</div>
 
 <div class="mt-12 max-w-sm bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-white dark:border-amber-700">
     <a href="#">
