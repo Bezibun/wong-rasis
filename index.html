@@ -6,56 +6,116 @@
     <link rel="icon" href="source/foto/logo.png" type="image/x-icon">
     <link href="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.css" rel="stylesheet" />
     <title>Majelis Ar-Raudhah</title>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
+
+<!-- Navbar -->
+<nav class="bg-white border-b border-gray-200 dark:bg-green-900">
+  <div class="max-w-screen-xl mx-auto flex items-center justify-between px-6 md:px-8 py-4">
     
-<!-- navbar -->
-<nav class="bg-white border-gray-200 dark:bg-green-900">
-  <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto pl-8 pr-8 pb-4 pt-4">
-    <a href="index.html" class="flex items-center space-x-3 rtl:space-x-reverse">
-        <img src="source/foto/logo.png" class="h-14" alt="Majelis Logo" />
-        <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Majelis Ar-Raudhah</span>
+    <!-- Logo -->
+    <a href="index.html" class="flex items-center space-x-3">
+        <img src="source/foto/logo.png" class="h-12" alt="Majelis Logo" />
+        <span class="text-2xl font-semibold dark:text-white">Majelis Ar-Raudhah</span>
     </a>
-    <button data-collapse-toggle="navbar-default" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-default" aria-expanded="false">
+
+    <!-- Toggle Button (Mobile) -->
+    <button data-collapse-toggle="navbar-default" type="button" 
+      class="inline-flex items-center p-2 w-10 h-10 justify-center text-gray-500 rounded-lg md:hidden hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700" 
+      aria-controls="navbar-default" aria-expanded="false">
         <span class="sr-only">Open main menu</span>
-        <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+        <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
         </svg>
     </button>
-    <div class="hidden w-full md:block md:w-auto" id="navbar-default">
-      <ul class="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-white dark:bg-green-900 md:dark:bg-green-900 dark:border-gray-700">
+
+    <!-- Menu -->
+    <div class="hidden md:flex items-center" id="navbar-default">
+      <ul class="flex space-x-10 font-medium">
         <li>
-          <a href="index.html" class="block py-2 px-3 text-white bg-blue-700 rounded-sm md:bg-transparent md:text-blue-700 md:p-0 dark:text-white md:dark:text-white" aria-current="page">Beranda</a>
+          <a href="index.html" class="text-blue-700 dark:text-white hover:text-green-700">Beranda</a>
         </li>
         <li>
-          <a href="talent.html" class="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-white md:p-0 dark:text-white md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Talent</a>
+          <a href="talent.html" class="text-gray-900 dark:text-white hover:text-green-700">Talent</a>
         </li>
         <li>
-          <a href="event.html" class="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-ehite md:p-0 dark:text-white md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Kegiatan</a>
+          <a href="event.html" class="text-gray-900 dark:text-white hover:text-green-700">Kegiatan</a>
         </li>
       </ul>
     </div>
+    
   </div>
 </nav>
-<!-- navbar -->
 
-<!--heading-->
+<!-- End Navbar -->
 
-<div class="flex items-center justify-center h-[100vh] bg-[url('/source/foto/bg-beranda.jpg')] bg-center">
-      <div data-aos="fade-up" data-aos-duration="1500" class="text-center">
-        <h1
-          class="mb-4 m-4 font-extrabold leading-tight tracking-tight text-center text-green-900 text-5xl sm:text-6xl md:text-7xl lg:text-8xl dark:text-green-900"
-        >
-          Majelis Ar-Raudhah
-        </h1>
-        <p
-          class="mb-6 p-4 text-center text-gray-900 text-base sm:text-lg md:text-xl lg:text-2xl sm:px-12 md:px-24 lg:px-48 dark:text-black"
-        >
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quia incidunt magni culpa ducimus quae officiis labore voluptas quidem aliquam veniam, sint asperiores! Quos repellendus saepe blanditiis ipsam a iusto impedit?
-      </div>
-      
+<!-- Heading -->
+<div class="flex items-center justify-center h-screen w-full bg-[url('/source/foto/bg-beranda.jpg')] bg-cover bg-center">
+  <div data-aos="fade-up" data-aos-duration="1500" class="text-center px-4">
+    <h1 class="mb-6 font-extrabold leading-tight text-green-900 text-4xl sm:text-5xl md:text-6xl lg:text-7xl dark:text-green-900">
+      Majelis Ar-Raudhah Sidoarjo
+    </h1>
+    <p class="max-w-3xl mx-auto text-gray-800 text-base sm:text-lg md:text-xl lg:text-2xl dark:text-black">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia incidunt magni culpa ducimus quae officiis labore voluptas quidem aliquam veniam, sint asperiores!
+    </p>
+  </div>
 </div>
-<!--heading-->
+<!-- End Heading -->
+
+<!-- Deskripsi -->
+<div class="flex justify-center px-2 py-2">
+    <div 
+       class="flex flex-col p-24 items-center bg-green-900 border border-gray-200 rounded-lg shadow-sm md:flex-row md:max-w-6xl w-full dark:border-gray-700 dark:bg-green-900">
+        
+        <!-- Gambar -->
+        <img class="object-cover w-full rounded-t-lg h-64 md:h-auto md:w-72 md:rounded-none md:rounded-s-lg" 
+             src="/source/foto/majelis.jpg" 
+             alt="">
+
+        <!-- Deskripsi -->
+        <div class="flex flex-col justify-center p-8 text-center md:text-left">
+            <h5 class="mb-4 text-3xl font-bold tracking-tight text-gray-900 dark:text-white">
+                Majelis Ar-Raudhah
+            </h5>
+            <p class="mb-3 text-lg font-normal text-white dark:text-white">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique consequatur, et corrupti laborum illum fuga, sunt mollitia nisi eaque dignissimos impedit dolorum ipsa laudantium libero error, ducimus esse quisquam alias.    
+            </p>
+        </div>
+    </div>
+</div>
+<!--Deskripsi-->
+
+<!--Footer-->
+
+
+<footer class="bg-white rounded-lg shadow-sm dark:bg-green-900 m-4">
+    <div class="w-full max-w-screen-xl mx-auto p-8 md:py-8">
+        <div class="sm:flex sm:items-center sm:justify-between">
+            <a href="index.html" class="flex items-center mb-4 sm:mb-0 space-x-3 rtl:space-x-reverse">
+                <img src="/source/foto/logo.png" class="h-12" alt="Majelis Logo" />
+                <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Majelis Ar-Raudhah</span>
+            </a>
+            <ul class="flex flex-wrap items-center mb-6 text-sm font-medium text-white-500 sm:mb-0 dark:text-white">
+                <li>
+                    <a href="https://www.tiktok.com/@majelis_ar_raudhah?_t=ZS-8ydtNaL3P6n&_r=1" class="hover:underline me-4 md:me-6">Tiktok</a>
+                </li>
+                <li>
+                    <a href="https://www.instagram.com/majelisarraudhahsidoarjo?igsh=MTJiZTgwZ2R4eTh4OA==" class="hover:underline me-4 md:me-6">Instagram</a>
+                </li>
+                <li>
+                    <a href="https://wa.me/6282143464071" target="_blank" class="hover:underline">Contact</a>
+                </li>
+            </ul>
+        </div>
+        <hr class="my-6 border-gray-200 sm:mx-auto dark:border-white-700 lg:my-8" />
+        <span class="block text-sm text-white sm:text-center dark:text-white">© 2025 <a href="index.html" class="hover:underline">Majelis Ar-Raudha™</a>. All Rights Reserved.</span>
+    </div>
+</footer>
+
+
+<!--Footer-->
+
 
 <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
 </body>
