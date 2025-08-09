@@ -56,7 +56,7 @@
 <!-- End Navbar -->
 
 <!--talent-->
-<div class="flex justify-center px-2 py-2 mt-16 mb-12">
+<div class="flex justify-center px-2 py-2 mt-16 mb-6">
     <div 
        class="flex flex-col p-4 md:p-8 items-center bg-green-900 border border-gray-200 rounded-lg shadow-sm md:flex-row md:max-w-6xl w-full dark:border-gray-700 dark:bg-green-900">
         
@@ -71,18 +71,26 @@
 <div class="w-full bg-white border border-green-900 rounded-lg shadow-sm dark:bg-green-900 dark:border-green-900 px-6 py-8">
     <ul class="flex flex-wrap text-sm font-medium text-center text-white border-b border-green-900 rounded-t-lg bg-green-900 dark:border-green-900 dark:text-white dark:bg-green-900" id="defaultTab" data-tabs-toggle="#defaultTabContent" role="tablist">
         <li class="me-2">
-            <button id="about-tab" data-tabs-target="#about" type="button" role="tab" aria-controls="about" aria-selected="true" class="inline-block p-4 text-white rounded-ss-lg hover:bg-green-700 dark:bg-green-900 dark:hover:bg-green-700 dark:hover:text-white dark:text-white">About</button>
+            <button id="about-tab" data-tabs-target="#about" type="button" role="tab" aria-controls="about" aria-selected="true" class="inline-block p-4 text-white 
+                   hover:bg-green-700 
+                   focus:outline-none focus:ring-0 
+                   focus:text-white focus:bg-green-700
+                   aria-selected:bg-green-700 aria-selected:text-white rounded-ss-lg">About</button>
         </li>
         <li class="me-2">
-            <button id="services-tab" data-tabs-target="#services" type="button" role="tab" aria-controls="services" aria-selected="false" class="inline-block p-4 hover:text-white hover:bg-green-700 dark:hover:bg-green-700 dark:hover:text-white dark:text-white">Services</button>
+            <button id="services-tab" data-tabs-target="#services" type="button" role="tab" aria-controls="services" aria-selected="false" class="iinline-block p-4 text-white 
+                   hover:bg-green-700 
+                   focus:outline-none focus:ring-0 
+                   focus:text-white focus:bg-green-700
+                   aria-selected:bg-green-700 aria-selected:text-white"">Services</button>
         </li>
 
     </ul>
     <div id="defaultTabContent">
         <div class="hidden p-4 bg-white rounded-lg md:p-8 dark:bg-green-900" id="about" role="tabpanel" aria-labelledby="about-tab">
             <h2 class="mb-3 text-3xl font-extrabold tracking-tight text-gray-900 dark:text-white">Ust. Wildan Suyuti, S.Sos.</h2>
-            <p class="mb-3 text-gray-500 dark:text-gray-400">Empower Developers, IT Ops, and business teams to collaborate at high velocity. Respond to changes and deliver great customer and employee service experiences fast.</p>
-            <a href="https://wa.me/6282143464071" class="inline-flex items-center font-medium text-blue-600 hover:text-blue-800 dark:text-white dark:hover:text-green-400">
+            <p class="mb-3 text-gray-500 dark:text-gray-400">Ustad Wildan merupakan Seorang Pembina dari Majelis Ar - Raudhah, yang memiliki banyak sekali Keterampilan, Beliau memiliki pengalaman di bidang Ruqyah, Bekam,  Qori, dan Sholawat. Beliau juga memiliki track record Menjadi Imam Masjid di berbagai macam Tempat, selain itu Beliau adalah Seorang Konseling yang berpengalaman.</p>
+            <a href="https://wa.me/6282143464071" class="inline-flex items-center font-medium text-white hover:text-green-400 dark:text-white dark:hover:text-green-400">
                 Hubungi Kami
                 <svg class=" w-2.5 h-2.5 ms-2 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
@@ -94,38 +102,146 @@
             <!-- List -->
             <ul role="list" class="space-y-4 text-gray-500 dark:text-gray-400">
                 <li class="flex space-x-2 rtl:space-x-reverse items-center">
-                    <svg class="shrink-0 w-3.5 h-3.5 text-blue-600 dark:text-blue-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="white" viewBox="0 0 20 20">
+                    <svg class="shrink-0 w-3.5 h-3.5 text-white dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="white" viewBox="0 0 20 20">
                         <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z"/>
                     </svg>
                     <span class="leading-tight text-white">Qori'</span>
                 </li>
                 <li class="flex space-x-2 rtl:space-x-reverse items-center">
-                    <svg class="shrink-0 w-3.5 h-3.5 text-blue-600 dark:text-blue-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="white" viewBox="0 0 20 20">
+                    <svg class="shrink-0 w-3.5 h-3.5 text-white dark:text-text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="white" viewBox="0 0 20 20">
                         <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z"/>
                     </svg>
                     <span class="leading-tight text-white">Ruqiyah</span>
                 </li>
                 <li class="flex space-x-2 rtl:space-x-reverse items-center">
-                    <svg class="shrink-0 w-3.5 h-3.5 text-blue-600 dark:text-blue-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="white" viewBox="0 0 20 20">
+                    <svg class="shrink-0 w-3.5 h-3.5 text-white dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="white" viewBox="0 0 20 20">
                         <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z"/>
                     </svg>
                     <span class="leading-tight text-white">Leader Sholawat</span>
                 </li>
                 <li class="flex space-x-2 rtl:space-x-reverse items-center">
-                    <svg class="shrink-0 w-3.5 h-3.5 text-blue-600 dark:text-blue-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="white" viewBox="0 0 20 20">
+                    <svg class="shrink-0 w-3.5 h-3.5 text-white dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="white" viewBox="0 0 20 20">
                         <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z"/>
                     </svg>
                     <span class="leading-tight text-white">Bekam</span>
                 </li>
             </ul>
         </div>
-        <div class="hidden p-4 bg-white rounded-lg md:p-8 dark:bg-gray-800" id="statistics" role="tabpanel" aria-labelledby="statistics-tab">
-            
+
         </div>
     </div>
-</div>
 
     </div>
+    
+    
+</div>
+
+<div class="space-y-4 px-4 sm:px-6 md:px-8 lg:px-12 mb-12">
+
+  <details
+    class="group border-t-4 border-green-700 bg-green-100 p-4 [&_summary::-webkit-details-marker]:hidden rounded-lg"
+  >
+    <summary class="flex items-center justify-between gap-1.5 text-black">
+      <h2 class="text-lg font-medium ">More Info</h2>
+
+      <svg
+        class="size-5 shrink-0 transition-transform duration-300 group-open:-rotate-180"
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="black"
+      >
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+      </svg>
+    </summary>
+
+    <section class="py-10 bg-green-100 sm:py-16 lg:py-24">
+    <div class="px-4 mx-auto sm:px-6 lg:px-8 max-w-7xl">
+        <div class="max-w-2xl mx-auto text-center">
+            <h2 class="text-3xl font-bold leading-tight text-black sm:text-4xl lg:text-5xl">
+                Ust. Wildan Suyuti, S.Sos.
+            </h2>
+        </div>
+        <div class="max-w-3xl mx-auto mt-8 space-y-4 md:mt-16">
+            <div
+                class="transition-all duration-200 bg-white border border-gray-200 shadow-lg cursor-pointer hover:bg-gray-50">
+                <button type="button" id="question1" data-state="closed" class="flex items-center justify-between w-full px-4 py-5 sm:p-6">
+                    <span class="flex text-lg font-semibold text-black">Pendidikan</span>
+                    <svg id="arrow1" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                        class="w-6 h-6 text-gray-400">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </button>
+                <div id="answer1" style="display:none" class="px-4 pb-5 sm:px-6 sm:pb-6">
+                    <p>
+                        > TK Muslimat Waru <br>
+                        > MI MINU Waru 2 <br>
+                        > MTs Jabal Noer Geluran <br>
+                        > MA Jabal Noer Geluran <br>
+                        > UIN Sunan Ampel Surabaya <br>
+                    </p>
+                </div>
+            </div>
+            <div
+                class="transition-all duration-200 bg-white border border-gray-200 shadow-lg cursor-pointer hover:bg-gray-50">
+                <button type="button" id="question2" data-state="closed" class="flex items-center justify-between w-full px-4 py-5 sm:p-6">
+                    <span class="flex text-lg font-semibold text-black">Penngalaman</span>
+                    <svg id="arrow2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                        class="w-6 h-6 text-gray-400">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </button>
+                <div id="answer2" style="display:none" class="px-4 pb-5 sm:px-6 sm:pb-6">
+                    <p>
+                        > Santri House of Tilawah Al-Quran <br>
+                        > Anggota Qosfada Syifa'ul Qulub UINSA <br>
+                        > Anggota Ruqiyah Aswaja Indonesia <br>
+                        > Khodimul Majelis Ar-Raudhah Sidoarjo <br>
+                        > Guru Qiroah di UINSA dan UMAHA <br>
+                        > MTQ Tingkat Provinsi <br>
+                    </p>
+                </div>
+            </div>
+            <div
+                class="transition-all duration-200 bg-white border border-gray-200 shadow-lg cursor-pointer hover:bg-gray-50">
+                <button type="button" id="question3" data-state="closed" class="flex items-center justify-between w-full px-4 py-5 sm:p-6">
+                    <span class="flex text-lg font-semibold text-black">Keterampilan</span>
+                    <svg id="arrow3" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                        class="w-6 h-6 text-gray-400">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </button>
+                <div id="answer3" style="display:none" class="px-4 pb-5 sm:px-6 sm:pb-6">
+                    <p>
+                        > Ruqiyah <br>
+                        > Tilawah <br>
+                        > Konselor <br>
+                        > Motivator <br>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        // JavaScript to toggle the answers and rotate the arrows
+        document.querySelectorAll('[id^="question"]').forEach(function(button, index) {
+            button.addEventListener('click', function() {
+                var answer = document.getElementById('answer' + (index + 1));
+                var arrow = document.getElementById('arrow' + (index + 1));
+
+                if (answer.style.display === 'none' || answer.style.display === '') {
+                    answer.style.display = 'block';
+                    arrow.style.transform = 'rotate(0deg)';
+                } else {
+                    answer.style.display = 'none';
+                    arrow.style.transform = 'rotate(-180deg)';
+                }
+            });
+        });
+    </script>
+</section>
+  </details>
+
 </div>
 
 <!--talent-->
