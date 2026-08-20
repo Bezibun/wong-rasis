@@ -16,21 +16,36 @@
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
-    <!-- AOS Animation -->
+    <!-- AOS Animation (Scroll) -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     
+    <!-- Custom CSS untuk Real 3D Effect -->
     <style>
         .bg-islamic {
             background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.05' fill-rule='evenodd'%3E%3Ccircle cx='3' cy='3' r='3'/%3E%3Ccircle cx='13' cy='13' r='3'/%3E%3C/g%3E%3C/svg%3E");
+        }
+        
+        /* Class penting buat efek elemen melayang di dalam card */
+        .preserve-3d {
+            transform-style: preserve-3d;
+            perspective: 1000px;
+        }
+        
+        /* Seberapa jauh elemen pop-out dari layar */
+        .pop-out-layer {
+            transform: translateZ(50px);
+        }
+        
+        .pop-out-icon {
+            transform: translateZ(70px);
         }
     </style>
 </head>
 <body class="bg-gray-50 overflow-x-hidden font-sans text-gray-800">
 
-<!-- Floating Navbar yang Anti-Penceng -->
+<!-- Floating Navbar -->
 <nav class="fixed top-0 left-0 right-0 z-50 px-4 py-4 transition-all duration-300" id="navbar-wrapper">
   <div id="nav-container" class="max-w-6xl mx-auto flex flex-wrap items-center justify-between px-6 py-3 transition-all duration-500 rounded-2xl">
-    
     <!-- Logo + Text -->
     <a href="index.html" class="flex items-center space-x-3 group">
       <img src="source/foto/logo.png" class="h-10 md:h-12 transform transition-transform duration-300 group-hover:scale-110" alt="Logo" />
@@ -50,39 +65,21 @@
     <!-- Menu -->
     <div class="hidden w-full md:block md:w-auto" id="navbar-menu">
       <ul class="font-medium flex flex-col p-4 md:p-0 mt-4 rounded-xl md:space-x-8 md:flex-row md:mt-0 bg-green-900/95 md:bg-transparent backdrop-blur-md md:backdrop-blur-none border md:border-0 border-white/10 shadow-xl md:shadow-none">
-        <li>
-          <a href="index.html" class="block py-2 px-3 text-white hover:text-green-300 md:hover:bg-transparent transition-colors rounded hover:bg-white/10 md:hover:bg-transparent">
-              <i class="fa-solid fa-house mr-2 md:hidden"></i>Beranda
-          </a>
-        </li>
-        <li>
-          <a href="talent.html" class="block py-2 px-3 text-white hover:text-green-300 md:hover:bg-transparent transition-colors rounded hover:bg-white/10 md:hover:bg-transparent">
-              <i class="fa-solid fa-users mr-2 md:hidden"></i>Talent
-          </a>
-        </li>
-        <li>
-          <a href="event.html" class="block py-2 px-3 text-white hover:text-green-300 md:hover:bg-transparent transition-colors rounded hover:bg-white/10 md:hover:bg-transparent">
-              <i class="fa-solid fa-calendar-days mr-2 md:hidden"></i>Kegiatan
-          </a>
-        </li>
+        <li><a href="index.html" class="block py-2 px-3 text-white hover:text-green-300 md:hover:bg-transparent transition-colors rounded hover:bg-white/10 md:hover:bg-transparent"><i class="fa-solid fa-house mr-2 md:hidden"></i>Beranda</a></li>
+        <li><a href="talent.html" class="block py-2 px-3 text-white hover:text-green-300 md:hover:bg-transparent transition-colors rounded hover:bg-white/10 md:hover:bg-transparent"><i class="fa-solid fa-users mr-2 md:hidden"></i>Talent</a></li>
+        <li><a href="event.html" class="block py-2 px-3 text-white hover:text-green-300 md:hover:bg-transparent transition-colors rounded hover:bg-white/10 md:hover:bg-transparent"><i class="fa-solid fa-calendar-days mr-2 md:hidden"></i>Kegiatan</a></li>
       </ul>
     </div>
   </div>
 </nav>
 <!-- End Navbar -->
 
-<!-- Heading / Hero Section (TIDAK DIUBAH, Hanya penyesuaian kelas warna murni) -->
+<!-- Heading / Hero Section -->
 <div class="relative flex items-center justify-center min-h-screen w-full overflow-hidden">
-  <!-- Background Image with Zoom Effect -->
   <div class="absolute inset-0 bg-[url('/source/foto/bg-beranda.jpg')] bg-cover bg-center transform scale-105 animate-[pulse_10s_ease-in-out_infinite_alternate]"></div>
-  
-  <!-- Modern Gradient Overlay (Green to White) -->
   <div class="absolute inset-0 bg-gradient-to-br from-green-900/95 via-green-800/80 to-white/40"></div>
-  
-  <!-- Islamic Pattern Overlay -->
   <div class="absolute inset-0 bg-islamic opacity-30"></div>
 
-  <!-- Content -->
   <div class="relative z-10 text-center px-4 mt-20" data-aos="zoom-in" data-aos-duration="1500">
     <div class="inline-block p-4 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 mb-6 shadow-xl" data-aos="fade-down" data-aos-delay="300">
         <i class="fa-solid fa-mosque text-3xl text-white"></i>
@@ -105,13 +102,9 @@
 <!-- Deskripsi -->
 <div id="tentang" class="flex justify-center px-4 py-24 bg-white relative">
     <div data-aos="fade-up" class="flex flex-col md:flex-row items-center bg-white border border-gray-100 rounded-[2rem] shadow-2xl overflow-hidden md:max-w-6xl w-full transform transition-all duration-500 hover:shadow-green-900/10 group z-10">
-        
-        <!-- Gambar -->
         <div class="w-full md:w-2/5 h-72 md:h-full relative overflow-hidden">
             <img class="object-cover w-full h-full transform transition-transform duration-700 group-hover:scale-105" src="/source/foto/majelis.jpeg" alt="Suasana Majelis Ar-Raudhah">
         </div>
-
-        <!-- Deskripsi Text -->
         <div class="flex flex-col justify-center p-8 md:p-12 w-full md:w-3/5 relative bg-white">
             <div class="absolute top-4 right-8 text-8xl text-green-50 opacity-50 select-none"><i class="fa-solid fa-quote-right"></i></div>
             
@@ -120,12 +113,8 @@
                 <div class="w-16 h-1.5 bg-green-500 rounded-full mt-3"></div>
             </h5>
             <div class="text-gray-600 text-base md:text-lg font-normal leading-relaxed space-y-4">
-                <p>
-                    Majelis Ar-Raudhah adalah Majelis Taklim dan Sholawat yang didirikan oleh Ust. Wildan Suyuti S. Sos di Daerah Desa Waru, Kecamatan Waru, Kabupaten Sidoarjo pada Tahun 2016 M. Majelis ini di buat dengan tujuan Mengumpulkan anak-anak muda dan Masyarakat untuk lebih mengenal dan mencintai Rasulullah Saw melalui Kajian Islam dan Pembacaan Sholawat Nabi.
-                </p>
-                <p>
-                    Nama Majelis Ar-Raudhah Sendiri diambil dari Nama Majelis yang didirikan oleh Seorang Ulama' Karismatik dari Bumi Kalimantan, Yaitu Syeikh Muhammad Zaini bin Abdullah Ghani atau yang akrab dikenal dengan sebutan Abah Guru Sekumpul.
-                </p>
+                <p>Majelis Ar-Raudhah adalah Majelis Taklim dan Sholawat yang didirikan oleh Ust. Wildan Suyuti S. Sos di Daerah Desa Waru, Kecamatan Waru, Kabupaten Sidoarjo pada Tahun 2016 M. Majelis ini di buat dengan tujuan Mengumpulkan anak-anak muda dan Masyarakat untuk lebih mengenal dan mencintai Rasulullah Saw melalui Kajian Islam dan Pembacaan Sholawat Nabi.</p>
+                <p>Nama Majelis Ar-Raudhah Sendiri diambil dari Nama Majelis yang didirikan oleh Seorang Ulama' Karismatik dari Bumi Kalimantan, Yaitu Syeikh Muhammad Zaini bin Abdullah Ghani atau yang akrab dikenal dengan sebutan Abah Guru Sekumpul.</p>
                 <p class="font-medium text-green-800 pt-2">
                     <i class="fa-solid fa-circle-check text-green-500 mr-2"></i> Rutinan Pembacaan Sholawat Diba'<br>
                     <i class="fa-solid fa-circle-check text-green-500 mr-2"></i> Kajian Islam & Pendidikan Al-Qur'an<br>
@@ -136,7 +125,6 @@
     </div>
 </div>
 <!-- End Deskripsi -->
-
 
 <!-- Visi Misi -->
 <section class="py-24 px-4 sm:px-8 lg:px-16 bg-gray-50 relative">
@@ -151,11 +139,9 @@
   </div>
 
   <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10">
-      <!-- Visi (Diperbaiki agar teks tidak putih di atas putih) -->
+      <!-- Visi -->
       <div data-aos="fade-right" class="bg-green-900 rounded-[2rem] shadow-xl p-8 sm:p-10 transform transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl relative overflow-hidden">
-        <!-- Dekorasi Ornamen -->
         <div class="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-bl-full"></div>
-        
         <div class="w-14 h-14 bg-white/20 rounded-xl flex items-center justify-center mb-6 backdrop-blur-sm">
             <i class="fa-solid fa-eye text-2xl text-green-300"></i>
         </div>
@@ -179,118 +165,116 @@
         </div>
         <h3 class="text-3xl font-bold text-green-900 mb-6">Misi</h3>
         <ul class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-gray-700">
-          <li class="flex items-center p-3 bg-gray-50 rounded-xl hover:bg-green-50 hover:text-green-900 transition-colors border border-transparent hover:border-green-100">
-              <i class="fa-solid fa-book-quran text-green-500 w-6"></i>
-              <span class="font-medium ml-2">Membuka TPQ</span>
-          </li>
-          <li class="flex items-center p-3 bg-gray-50 rounded-xl hover:bg-green-50 hover:text-green-900 transition-colors border border-transparent hover:border-green-100">
-              <i class="fa-solid fa-microphone-lines text-green-500 w-6"></i>
-              <span class="font-medium ml-2">Pelatihan Tilawah</span>
-          </li>
-          <li class="flex items-center p-3 bg-gray-50 rounded-xl hover:bg-green-50 hover:text-green-900 transition-colors border border-transparent hover:border-green-100">
-              <i class="fa-solid fa-users-rays text-green-500 w-6"></i>
-              <span class="font-medium ml-2">Kajian Islam</span>
-          </li>
-          <li class="flex items-center p-3 bg-gray-50 rounded-xl hover:bg-green-50 hover:text-green-900 transition-colors border border-transparent hover:border-green-100">
-              <i class="fa-solid fa-map-location-dot text-green-500 w-6"></i>
-              <span class="font-medium ml-2">Ziarah Wali</span>
-          </li>
-          <li class="flex items-center p-3 bg-gray-50 rounded-xl hover:bg-green-50 hover:text-green-900 transition-colors border border-transparent hover:border-green-100">
-              <i class="fa-solid fa-hands-praying text-green-500 w-6"></i>
-              <span class="font-medium ml-2">Yasin & Tahlil</span>
-          </li>
-          <li class="flex items-center p-3 bg-gray-50 rounded-xl hover:bg-green-50 hover:text-green-900 transition-colors border border-transparent hover:border-green-100">
-              <i class="fa-solid fa-book-open text-green-500 w-6"></i>
-              <span class="font-medium ml-2">Khotmil Qur'an</span>
-          </li>
+          <li class="flex items-center p-3 bg-gray-50 rounded-xl hover:bg-green-50 hover:text-green-900 transition-colors border border-transparent hover:border-green-100"><i class="fa-solid fa-book-quran text-green-500 w-6"></i><span class="font-medium ml-2">Membuka TPQ</span></li>
+          <li class="flex items-center p-3 bg-gray-50 rounded-xl hover:bg-green-50 hover:text-green-900 transition-colors border border-transparent hover:border-green-100"><i class="fa-solid fa-microphone-lines text-green-500 w-6"></i><span class="font-medium ml-2">Pelatihan Tilawah</span></li>
+          <li class="flex items-center p-3 bg-gray-50 rounded-xl hover:bg-green-50 hover:text-green-900 transition-colors border border-transparent hover:border-green-100"><i class="fa-solid fa-users-rays text-green-500 w-6"></i><span class="font-medium ml-2">Kajian Islam</span></li>
+          <li class="flex items-center p-3 bg-gray-50 rounded-xl hover:bg-green-50 hover:text-green-900 transition-colors border border-transparent hover:border-green-100"><i class="fa-solid fa-map-location-dot text-green-500 w-6"></i><span class="font-medium ml-2">Ziarah Wali</span></li>
+          <li class="flex items-center p-3 bg-gray-50 rounded-xl hover:bg-green-50 hover:text-green-900 transition-colors border border-transparent hover:border-green-100"><i class="fa-solid fa-hands-praying text-green-500 w-6"></i><span class="font-medium ml-2">Yasin & Tahlil</span></li>
+          <li class="flex items-center p-3 bg-gray-50 rounded-xl hover:bg-green-50 hover:text-green-900 transition-colors border border-transparent hover:border-green-100"><i class="fa-solid fa-book-open text-green-500 w-6"></i><span class="font-medium ml-2">Khotmil Qur'an</span></li>
         </ul>
       </div>
   </div>
 </section>
 <!-- End Visi Misi -->
 
+<!-- KEGIATAN: REAL 3D PARALLAX TIMELINE (SUPER MODERN) -->
+<div class="w-full bg-white py-32 relative overflow-hidden">
+  
+  <!-- Dekorasi Background -->
+  <div class="absolute top-0 right-0 w-96 h-96 bg-green-50 rounded-full mix-blend-multiply filter blur-3xl opacity-60 -z-10"></div>
+  <div class="absolute bottom-0 left-0 w-96 h-96 bg-green-100 rounded-full mix-blend-multiply filter blur-3xl opacity-50 -z-10"></div>
 
-<!-- Kegiatan (3D Timeline Diperbaiki) -->
-<div class="w-full bg-white py-24 relative overflow-hidden">
-  <div class="max-w-5xl mx-auto px-4 sm:px-8">
+  <div class="max-w-6xl mx-auto px-4 sm:px-8 relative">
       
-      <div class="text-center mb-20" data-aos="fade-up">
+      <div class="text-center mb-24" data-aos="fade-up">
           <h3 class="text-3xl md:text-4xl font-extrabold text-green-900 inline-block relative">
             Kegiatan Majelis
-            <span class="absolute -bottom-3 left-1/2 -translate-x-1/2 w-16 h-1 bg-green-500 rounded-full"></span>
+            <span class="absolute -bottom-4 left-1/2 -translate-x-1/2 w-20 h-1.5 bg-gradient-to-r from-green-400 to-green-900 rounded-full"></span>
           </h3>
       </div>
 
-      <!-- Timeline Container Modern -->
+      <!-- Timeline Container -->
       <div class="relative wrap overflow-hidden p-2">
         
-        <!-- Garis Tengah yang Presisi -->
-        <div class="absolute h-full w-1 bg-green-100 left-8 md:left-1/2 transform md:-translate-x-1/2 top-0 rounded-full"></div>
+        <!-- Garis Tengah Glowing Modern -->
+        <div class="absolute h-full w-1.5 bg-gradient-to-b from-green-200 via-green-500 to-green-200 left-10 md:left-1/2 transform md:-translate-x-1/2 top-0 rounded-full shadow-[0_0_15px_rgba(34,197,94,0.5)]"></div>
 
-        <!-- Item 1 (Kiri di Desktop) -->
-        <div class="relative flex flex-col md:flex-row items-center justify-between mb-16 w-full" data-aos="fade-up">
-            <!-- Card -->
-            <div class="w-full md:w-[45%] order-2 md:order-1 pl-20 md:pl-0 text-left md:text-right">
-                <div class="bg-white p-6 md:p-8 rounded-2xl shadow-[0_10px_30px_rgba(0,0,0,0.08)] border border-gray-100 transform transition-all duration-300 hover:-translate-y-2 hover:shadow-xl group relative overflow-hidden">
-                    <div class="absolute -right-6 -top-6 w-24 h-24 bg-green-50 rounded-full -z-10 transition-transform duration-500 group-hover:scale-150"></div>
-                    <h3 class="text-2xl font-bold text-green-900 mb-3">Kajian</h3>
-                    <p class="text-gray-600 mb-4 leading-relaxed text-sm md:text-base">
-                        Majelis Ar-Raudhah juga memiliki kegiatan Belajar agama dengan cara yang menyenangkan. Di kajian ini, kita akan membahas ilmu-ilmu keislaman secara ringan namun mendalam bersama ustadz yang berkompeten.
-                    </p>
-                    <a href="event.html" class="inline-flex items-center text-green-600 font-semibold hover:text-green-800 transition-colors">
-                        Read More <i class="fa-solid fa-arrow-right ml-2 text-sm transform transition-transform group-hover:translate-x-2"></i>
-                    </a>
+        <!-- Item 1 (Kiri) -->
+        <div class="relative flex flex-col md:flex-row items-center justify-between mb-20 w-full" data-aos="fade-up" data-aos-duration="1000">
+            <!-- 3D Card Area -->
+            <div class="w-full md:w-[45%] order-2 md:order-1 pl-24 md:pl-0 text-left md:text-right perspective-1000">
+                <!-- Wrapper Tilt.js -->
+                <div data-tilt data-tilt-max="10" data-tilt-speed="400" data-tilt-glare="true" data-tilt-max-glare="0.2" class="bg-white/80 backdrop-blur-lg p-8 md:p-10 rounded-[2rem] shadow-[0_20px_40px_rgba(0,0,0,0.08)] border border-white/50 preserve-3d relative overflow-hidden cursor-pointer">
+                    <!-- Elemen yg melayang keluar (pop-out) -->
+                    <div class="pop-out-layer">
+                        <div class="absolute -right-8 -top-8 w-32 h-32 bg-green-100 rounded-full -z-10 opacity-50 pop-out-icon"></div>
+                        <h3 class="text-3xl font-extrabold text-green-900 mb-4 drop-shadow-sm">Kajian</h3>
+                        <p class="text-gray-600 mb-6 leading-relaxed text-sm md:text-base font-medium">
+                            Majelis Ar-Raudhah juga memiliki kegiatan Belajar agama dengan cara yang menyenangkan. Di kajian ini, kita akan membahas ilmu-ilmu keislaman secara ringan namun mendalam bersama ustadz yang berkompeten.
+                        </p>
+                        <a href="event.html" class="inline-flex items-center px-5 py-2.5 bg-green-50 text-green-700 font-bold rounded-full hover:bg-green-500 hover:text-white transition-all duration-300 pop-out-icon shadow-sm">
+                            Read More <i class="fa-solid fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
                 </div>
             </div>
-            <!-- Icon Point -->
-            <div class="absolute left-8 md:left-1/2 transform -translate-x-1/2 flex items-center justify-center w-12 h-12 bg-green-500 rounded-full border-4 border-white shadow-lg order-1 md:order-2 z-10">
-                <i class="fa-solid fa-chalkboard-user text-white text-lg"></i>
+            <!-- Icon Dot Glowing -->
+            <div class="absolute left-10 md:left-1/2 transform -translate-x-1/2 flex items-center justify-center w-14 h-14 bg-green-500 rounded-full border-4 border-white shadow-[0_0_20px_rgba(34,197,94,0.6)] order-1 md:order-2 z-20">
+                <i class="fa-solid fa-chalkboard-user text-white text-xl animate-pulse"></i>
             </div>
             <!-- Spacer Kosong -->
             <div class="w-full md:w-[45%] order-3 hidden md:block"></div>
         </div>
 
-        <!-- Item 2 (Kanan di Desktop) -->
-        <div class="relative flex flex-col md:flex-row items-center justify-between mb-16 w-full" data-aos="fade-up">
+        <!-- Item 2 (Kanan) -->
+        <div class="relative flex flex-col md:flex-row items-center justify-between mb-20 w-full" data-aos="fade-up" data-aos-duration="1000">
             <!-- Spacer Kosong -->
             <div class="w-full md:w-[45%] order-1 hidden md:block"></div>
-            <!-- Icon Point -->
-            <div class="absolute left-8 md:left-1/2 transform -translate-x-1/2 flex items-center justify-center w-12 h-12 bg-green-900 rounded-full border-4 border-white shadow-lg order-2 z-10">
-                <i class="fa-solid fa-drum text-white text-lg"></i>
+            <!-- Icon Dot Glowing -->
+            <div class="absolute left-10 md:left-1/2 transform -translate-x-1/2 flex items-center justify-center w-14 h-14 bg-green-900 rounded-full border-4 border-white shadow-[0_0_20px_rgba(20,83,45,0.6)] order-2 z-20">
+                <i class="fa-solid fa-drum text-white text-xl animate-pulse"></i>
             </div>
-            <!-- Card -->
-            <div class="w-full md:w-[45%] order-3 pl-20 md:pl-0 text-left">
-                <div class="bg-green-900 p-6 md:p-8 rounded-2xl shadow-[0_10px_30px_rgba(20,83,45,0.2)] transform transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl group relative overflow-hidden">
-                    <div class="absolute -left-6 -bottom-6 w-24 h-24 bg-white/5 rounded-full z-0 transition-transform duration-500 group-hover:scale-150"></div>
-                    <h3 class="text-2xl font-bold text-white mb-3 relative z-10">Pembacaan Maulid Diba'</h3>
-                    <p class="text-green-50 mb-4 leading-relaxed text-sm md:text-base relative z-10 opacity-90">
-                        Mari duduk bersama, melantunkan shalawat untuk Rasulullah ﷺ. Suasananya hangat, penuh berkah, dan membuat hati terasa lebih tenang, serta mempererat silaturahmi antar jamaah.  
-                    </p>
-                    <a href="event.html" class="inline-flex items-center text-green-300 font-semibold hover:text-white transition-colors relative z-10">
-                        Read More <i class="fa-solid fa-arrow-right ml-2 text-sm transform transition-transform group-hover:translate-x-2"></i>
-                    </a>
+            <!-- 3D Card Area -->
+            <div class="w-full md:w-[45%] order-3 pl-24 md:pl-0 text-left">
+                <!-- Wrapper Tilt.js (Warna Gelap) -->
+                <div data-tilt data-tilt-max="10" data-tilt-speed="400" data-tilt-glare="true" data-tilt-max-glare="0.3" class="bg-gradient-to-br from-green-900 to-green-800 p-8 md:p-10 rounded-[2rem] shadow-[0_20px_50px_rgba(20,83,45,0.3)] border border-green-700 preserve-3d relative overflow-hidden cursor-pointer">
+                    <!-- Elemen yg melayang keluar (pop-out) -->
+                    <div class="pop-out-layer">
+                        <div class="absolute -left-8 -bottom-8 w-32 h-32 bg-white/5 rounded-full -z-10 pop-out-icon"></div>
+                        <h3 class="text-3xl font-extrabold text-white mb-4 drop-shadow-md">Pembacaan Maulid Diba'</h3>
+                        <p class="text-green-50 mb-6 leading-relaxed text-sm md:text-base font-medium opacity-90">
+                            Mari duduk bersama, melantunkan shalawat untuk Rasulullah ﷺ. Suasananya hangat, penuh berkah, dan membuat hati terasa lebih tenang, serta mempererat silaturahmi antar jamaah.  
+                        </p>
+                        <a href="event.html" class="inline-flex items-center px-5 py-2.5 bg-white/10 text-white font-bold rounded-full hover:bg-white hover:text-green-900 transition-all duration-300 pop-out-icon backdrop-blur-sm border border-white/20">
+                            Read More <i class="fa-solid fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
 
-        <!-- Item 3 (Kiri di Desktop) -->
-        <div class="relative flex flex-col md:flex-row items-center justify-between w-full" data-aos="fade-up">
-            <!-- Card -->
-            <div class="w-full md:w-[45%] order-2 md:order-1 pl-20 md:pl-0 text-left md:text-right">
-                <div class="bg-white p-6 md:p-8 rounded-2xl shadow-[0_10px_30px_rgba(0,0,0,0.08)] border border-gray-100 transform transition-all duration-300 hover:-translate-y-2 hover:shadow-xl group relative overflow-hidden">
-                    <div class="absolute -right-6 -top-6 w-24 h-24 bg-green-50 rounded-full -z-10 transition-transform duration-500 group-hover:scale-150"></div>
-                    <h3 class="text-2xl font-bold text-green-900 mb-3">Ziarah Wali</h3>
-                    <p class="text-gray-600 mb-4 leading-relaxed text-sm md:text-base">
-                        Ziarah bukan hanya sekadar perjalanan. Kita mengunjungi makam ulama dan tokoh Islam untuk mengenang jasa mereka, merenungi perjuangan, dan memetik hikmah agar iman kita semakin kuat.
-                    </p>
-                    <a href="event.html" class="inline-flex items-center text-green-600 font-semibold hover:text-green-800 transition-colors">
-                        Read More <i class="fa-solid fa-arrow-right ml-2 text-sm transform transition-transform group-hover:translate-x-2"></i>
-                    </a>
+        <!-- Item 3 (Kiri) -->
+        <div class="relative flex flex-col md:flex-row items-center justify-between w-full" data-aos="fade-up" data-aos-duration="1000">
+            <!-- 3D Card Area -->
+            <div class="w-full md:w-[45%] order-2 md:order-1 pl-24 md:pl-0 text-left md:text-right">
+                <!-- Wrapper Tilt.js -->
+                <div data-tilt data-tilt-max="10" data-tilt-speed="400" data-tilt-glare="true" data-tilt-max-glare="0.2" class="bg-white/80 backdrop-blur-lg p-8 md:p-10 rounded-[2rem] shadow-[0_20px_40px_rgba(0,0,0,0.08)] border border-white/50 preserve-3d relative overflow-hidden cursor-pointer">
+                    <!-- Elemen yg melayang keluar (pop-out) -->
+                    <div class="pop-out-layer">
+                        <div class="absolute -right-8 -top-8 w-32 h-32 bg-green-100 rounded-full -z-10 opacity-50 pop-out-icon"></div>
+                        <h3 class="text-3xl font-extrabold text-green-900 mb-4 drop-shadow-sm">Ziarah Wali</h3>
+                        <p class="text-gray-600 mb-6 leading-relaxed text-sm md:text-base font-medium">
+                            Ziarah bukan hanya sekadar perjalanan. Kita mengunjungi makam ulama dan tokoh Islam untuk mengenang jasa mereka, merenungi perjuangan, dan memetik hikmah agar iman kita semakin kuat.
+                        </p>
+                        <a href="event.html" class="inline-flex items-center px-5 py-2.5 bg-green-50 text-green-700 font-bold rounded-full hover:bg-green-500 hover:text-white transition-all duration-300 pop-out-icon shadow-sm">
+                            Read More <i class="fa-solid fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
                 </div>
             </div>
-            <!-- Icon Point -->
-            <div class="absolute left-8 md:left-1/2 transform -translate-x-1/2 flex items-center justify-center w-12 h-12 bg-green-500 rounded-full border-4 border-white shadow-lg order-1 md:order-2 z-10">
-                <i class="fa-solid fa-bus text-white text-lg"></i>
+            <!-- Icon Dot Glowing -->
+            <div class="absolute left-10 md:left-1/2 transform -translate-x-1/2 flex items-center justify-center w-14 h-14 bg-green-500 rounded-full border-4 border-white shadow-[0_0_20px_rgba(34,197,94,0.6)] order-1 md:order-2 z-20">
+                <i class="fa-solid fa-bus text-white text-xl animate-pulse"></i>
             </div>
             <!-- Spacer Kosong -->
             <div class="w-full md:w-[45%] order-3 hidden md:block"></div>
@@ -302,7 +286,7 @@
 <!-- End Kegiatan -->
 
 <!-- Footer -->
-<footer class="bg-white border-t border-gray-100 mt-10">
+<footer class="bg-white border-t border-gray-100">
     <div class="w-full max-w-screen-xl mx-auto p-6 md:py-10">
         <div class="sm:flex sm:items-center sm:justify-between">
             <a href="index.html" class="flex items-center mb-6 sm:mb-0 space-x-3 group">
@@ -310,21 +294,9 @@
                 <span class="self-center text-2xl font-bold text-green-900 whitespace-nowrap">Majelis Ar-Raudhah</span>
             </a>
             <ul class="flex flex-wrap items-center mb-6 text-sm font-medium text-gray-600 sm:mb-0">
-                <li>
-                    <a href="https://www.tiktok.com/@majelis_ar_raudhah?_t=ZS-8ydtNaL3P6n&_r=1" target="_blank" class="hover:text-green-900 transition-colors me-4 md:me-6 flex items-center">
-                        <i class="fa-brands fa-tiktok text-lg mr-2"></i> TikTok
-                    </a>
-                </li>
-                <li>
-                    <a href="https://www.instagram.com/majelisarraudhahsidoarjo?igsh=MTJiZTgwZ2R4eTh4OA==" target="_blank" class="hover:text-green-900 transition-colors me-4 md:me-6 flex items-center">
-                        <i class="fa-brands fa-instagram text-lg mr-2"></i> Instagram
-                    </a>
-                </li>
-                <li>
-                    <a href="https://wa.me/6282143464071" target="_blank" class="hover:text-green-900 transition-colors flex items-center bg-green-50 hover:bg-green-100 px-4 py-2 rounded-full">
-                        <i class="fa-brands fa-whatsapp text-lg mr-2 text-green-600"></i> Contact Us
-                    </a>
-                </li>
+                <li><a href="https://www.tiktok.com/@majelis_ar_raudhah?_t=ZS-8ydtNaL3P6n&_r=1" target="_blank" class="hover:text-green-900 transition-colors me-4 md:me-6 flex items-center"><i class="fa-brands fa-tiktok text-lg mr-2"></i> TikTok</a></li>
+                <li><a href="https://www.instagram.com/majelisarraudhahsidoarjo?igsh=MTJiZTgwZ2R4eTh4OA==" target="_blank" class="hover:text-green-900 transition-colors me-4 md:me-6 flex items-center"><i class="fa-brands fa-instagram text-lg mr-2"></i> Instagram</a></li>
+                <li><a href="https://wa.me/6282143464071" target="_blank" class="hover:text-green-900 transition-colors flex items-center bg-green-50 hover:bg-green-100 px-4 py-2 rounded-full"><i class="fa-brands fa-whatsapp text-lg mr-2 text-green-600"></i> Contact Us</a></li>
             </ul>
         </div>
         <hr class="my-6 border-gray-100 sm:mx-auto lg:my-8" />
@@ -333,36 +305,42 @@
 </footer>
 <!-- End Footer -->
 
-<!-- Flowbite JS -->
+<!-- Script Libraries -->
 <script src="https://unpkg.com/flowbite@latest/dist/flowbite.min.js"></script>
-
-<!-- AOS JS (Animation) -->
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
-<!-- Custom Vanilla JS -->
+<!-- VANILLA TILT JS (Buat Efek 3D Card Interaktif) -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js"></script>
+
+<!-- Custom Scripts -->
 <script>
-    // Inisialisasi AOS Animation
+    // Init Scroll Animation
     AOS.init({
         once: true,
-        offset: 50,
+        offset: 100,
         duration: 800,
     });
 
-    // Logic Navbar Glassmorphism yang Stabil
+    // Logic Navbar Glassmorphism
     const navContainer = document.getElementById('nav-container');
-
     window.addEventListener('scroll', () => {
         if (window.scrollY > 50) {
-            // Pas scroll ke bawah, background hijau + glass effect aktif
             navContainer.classList.add('bg-green-900/90', 'backdrop-blur-lg', 'shadow-2xl', 'border', 'border-white/10');
             navContainer.classList.remove('py-3');
             navContainer.classList.add('py-2');
         } else {
-            // Pas di paling atas, transparan lagi
             navContainer.classList.remove('bg-green-900/90', 'backdrop-blur-lg', 'shadow-2xl', 'border', 'border-white/10');
             navContainer.classList.remove('py-2');
             navContainer.classList.add('py-3');
         }
+    });
+
+    // Inisialisasi Vanilla Tilt buat 3D Effect di device yang support pointer (Mouse)
+    VanillaTilt.init(document.querySelectorAll("[data-tilt]"), {
+        max: 15,
+        speed: 400,
+        glare: true,
+        "max-glare": 0.2,
     });
 </script>
 
