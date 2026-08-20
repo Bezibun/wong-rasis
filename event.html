@@ -1,403 +1,556 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="source/foto/logo.png" type="image/x-icon">
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <title>Majelis Ar-Raudhah</title>
-</head>
-<body>
     
-<!-- Navbar -->
-<nav class="bg-green-900 border-gray-200">
-  <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto px-4 py-3">
+    <title>Majelis Ar-Raudhah</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Flowbite -->
+    <link href="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.css" rel="stylesheet" />
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <style>
+        .bg-islamic {
+            background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.05' fill-rule='evenodd'%3E%3Ccircle cx='3' cy='3' r='3'/%3E%3Ccircle cx='13' cy='13' r='3'/%3E%3C/g%3E%3C/svg%3E");
+        }
+        /* Hide scrollbar for gallery if needed */
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+</head>
+<body class="bg-gray-50 overflow-x-hidden font-sans text-gray-800">
+
+<!-- Floating Navbar -->
+<nav class="fixed top-0 left-0 right-0 z-50 px-4 py-4 transition-all duration-300" id="navbar-wrapper">
+  <div id="nav-container" class="max-w-7xl mx-auto flex flex-wrap items-center justify-between px-6 py-3 transition-all duration-500 rounded-2xl">
     
     <!-- Logo + Text -->
-    <a href="index.html" class="flex items-center space-x-3 rtl:space-x-reverse">
-      <img src="source/foto/logo.png" class="h-10" alt="Logo" />
-      <span class="self-center text-2xl font-semibold text-white whitespace-nowrap">Majelis Ar-Raudhah</span>
+    <a href="#beranda" class="flex items-center space-x-3 group">
+      <img src="source/foto/logo.png" class="h-10 md:h-12 transform transition-transform duration-300 group-hover:scale-110" alt="Logo" />
+      <span class="self-center text-xl md:text-2xl font-bold text-white whitespace-nowrap drop-shadow-md">Majelis Ar-Raudhah</span>
     </a>
 
     <!-- Toggle Button (Mobile) -->
-    <button data-collapse-toggle="navbar-default" type="button"
-      class="inline-flex items-center p-2 w-10 h-10 justify-center text-white rounded-lg md:hidden hover:bg-green-800 focus:outline-none focus:ring-2 focus:ring-green-500"
-      aria-controls="navbar-default" aria-expanded="false">
+    <button data-collapse-toggle="navbar-menu" type="button"
+      class="inline-flex items-center p-2 w-10 h-10 justify-center text-white rounded-lg md:hidden hover:bg-white/20 focus:outline-none transition-colors"
+      aria-controls="navbar-menu" aria-expanded="false">
       <span class="sr-only">Open main menu</span>
       <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
-        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-          d="M1 1h15M1 7h15M1 13h15" />
+        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15" />
       </svg>
     </button>
 
-    <!-- Menu -->
-    <div class="hidden w-full md:block md:w-auto" id="navbar-default">
-      <ul
-        class="font-medium flex flex-col p-4 md:p-0 mt-4 rounded-lg md:space-x-10 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-green-900 bg-green-800">
-        <li>
-          <a href="index.html"
-            class="block py-2 px-3 text-white hover:text-green-300 md:p-0">Beranda</a>
-        </li>
-        <li>
-          <a href="talent.html"
-            class="block py-2 px-3 text-white hover:text-green-300 md:p-0">Talent</a>
-        </li>
-        <li>
-          <a href="event.html"
-            class="block py-2 px-3 text-white hover:text-green-300 md:p-0">Kegiatan</a>
-        </li>
+    <!-- Menu Lengkap (Satu Halaman) -->
+    <div class="hidden w-full md:block md:w-auto" id="navbar-menu">
+      <ul class="font-medium flex flex-col p-4 md:p-0 mt-4 rounded-xl md:space-x-6 lg:space-x-8 md:flex-row md:mt-0 bg-green-900/95 md:bg-transparent backdrop-blur-md md:backdrop-blur-none border md:border-0 border-white/10 shadow-xl md:shadow-none">
+        <li><a href="#beranda" class="block py-2 px-3 text-white hover:text-green-300 transition-colors rounded hover:bg-white/10 md:hover:bg-transparent"><i class="fa-solid fa-house mr-2 md:hidden"></i>Beranda</a></li>
+        <li><a href="#tentang" class="block py-2 px-3 text-white hover:text-green-300 transition-colors rounded hover:bg-white/10 md:hover:bg-transparent"><i class="fa-solid fa-info-circle mr-2 md:hidden"></i>About</a></li>
+        <li><a href="#visi" class="block py-2 px-3 text-white hover:text-green-300 transition-colors rounded hover:bg-white/10 md:hover:bg-transparent"><i class="fa-solid fa-eye mr-2 md:hidden"></i>Visi</a></li>
+        <li><a href="#kegiatan" class="block py-2 px-3 text-white hover:text-green-300 transition-colors rounded hover:bg-white/10 md:hover:bg-transparent"><i class="fa-solid fa-calendar-days mr-2 md:hidden"></i>Kegiatan</a></li>
+        <li><a href="#talent" class="block py-2 px-3 text-white hover:text-green-300 transition-colors rounded hover:bg-white/10 md:hover:bg-transparent"><i class="fa-solid fa-users mr-2 md:hidden"></i>Talent</a></li>
+        <li><a href="#dokumentasi" class="block py-2 px-3 text-white hover:text-green-300 transition-colors rounded hover:bg-white/10 md:hover:bg-transparent"><i class="fa-solid fa-camera mr-2 md:hidden"></i>Dokumentasi</a></li>
       </ul>
     </div>
   </div>
 </nav>
-
-
 <!-- End Navbar -->
 
+<!-- Beranda / Hero Section -->
+<div id="beranda" class="relative flex items-center justify-center min-h-screen w-full overflow-hidden">
+  <div class="absolute inset-0 bg-[url('/source/foto/bg-beranda.jpg')] bg-cover bg-center transform scale-105 animate-[pulse_10s_ease-in-out_infinite_alternate]"></div>
+  <div class="absolute inset-0 bg-gradient-to-br from-green-900/95 via-green-800/80 to-white/40"></div>
+  <div class="absolute inset-0 bg-islamic opacity-30"></div>
 
-<!--Rutinan-->
-<h2 class="mt-12 max-w-3xl mx-4 sm:mx-auto  text-center font-bold bg-green-900 text-white px-6 py-4 rounded-lg text-lg sm:text-2xl md:text-3xl lg:text-4xl">
-    Kegiatan Rutinan
-</h2>
-<div class=" mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 px-4 justify-items-center pb-12">
-    <!-- Card 1 -->
-    <div class="w-full max-w-sm bg-white rounded-lg shadow">
-        <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-white dark:border-green-700">
-    <a href="kegiatan-1.html">
-        <img class="rounded-t-lg" src="/source/foto/kegiatan-1.jpeg" alt="" />
-    </a>
-    <div class="p-5">
-        <a href="kegiatan-1.html">
-            <h5 class="mb-2 text-2xl font-bold tracking-tight text-white dark:text-green-500">Rutinan Pembacaan Sholawat Diba' bersama Majelis Ta'lim dan Sholawat Ar-Raudhah Sidoarjo. </h5>
-        </a>
-        <p class="mb-3 font-normal text-black dark:text-black">
-            > Hari : Setiap Jum'at, Minggu Pertama <br>
-            > Waktu : 19.00 - Selesai. (Ba'da Sholat Isya) <br>
-            > Tempat : Masjid At-Tadzkiroh PWI 2. <br>
-
-        </p>
-        <a href="kegiatan-1.html" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-green-500 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-green-500 dark:hover:bg-green-800 dark:focus:ring-amber-800">
-            Read More
-             <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
-                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
-            </svg>
-        </a>
+  <div class="relative z-10 text-center px-4 mt-20" data-aos="zoom-in" data-aos-duration="1500">
+    <div class="inline-block p-4 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 mb-6 shadow-xl" data-aos="fade-down" data-aos-delay="300">
+        <i class="fa-solid fa-mosque text-3xl text-white"></i>
     </div>
-        </div>
-    </div>
-
-    <!-- Card 2 -->
-    <div class="w-full max-w-sm bg-white rounded-lg shadow">
-        <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-white dark:border-green-700">
-    <a href="kegiatan-2.html">
-        <img class="rounded-t-lg" src="/source/foto/poster baru.jpg" alt="" />
-    </a>
-    <div class="p-5">
-        <a href="kegiatan-2.html">
-            <h5 class="mb-2 text-2xl font-bold tracking-tight text-white dark:text-blue-900">Pembacaan Maulid Diba' di Aula Majelis Ar-Raudhah Bersama Majelis Ar-Raudhah Sidoarjo.</h5>
-        </a>
-        <p class="mb-3 font-normal text-black dark:text-black">
-            > Hari : Setiap Jum'at, Minggu Keempat <br>
-            > Waktu : 19.00 - Selesai. (Ba'da Sholat Isya) <br>
-            > Tempat : Aula Majelis Ar-Raudhah<br>
-
-        </p>
-        <a href="kegiatan-2.html" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-green-500 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-900 dark:hover:bg-blue-800 dark:focus:ring-amber-800">
-            Read More
-             <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
-                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
-            </svg>
-        </a>
-    </div>
-        </div>
-    </div>
-</div>
-<!--Rutinan-->
-
-<!--Dokuemnteer Kegiatan-->
-<h2 class="max-w-3xl mx-4 sm:mx-auto mb-8 text-center font-bold bg-green-900 text-white px-6 py-4 rounded-lg text-lg sm:text-2xl md:text-3xl lg:text-4xl">
-    Dokumenter Kegiatan
-</h2>
-
-
-
-
-
-<div class="w-full text-center">
-    <span class="inline-block font-bold text-green-900 border-b-4 border-green-900 pb-1 text-2xl sm:text-3xl md:text-4xl lg:text-5xl">
-        Ziarah
-    </span>
-</div>
-
-<div class="space-y-4 px-8 pt-12">
-  <details
-    class="group rounded-s-lg border-t-4 border-green-900 bg-green-50 p-4 [&_summary::-webkit-details-marker]:hidden"
-  >
-    <summary class="flex items-center text-center justify-between gap-1.5 text-black">
-      <h2 class="text-lg font-medium ">Deskripsi</h2>
-
-      <svg
-        class="size-5 shrink-0 transition-transform duration-300 group-open:-rotate-180"
-        xmlns="http://www.w3.org/2000/svg"
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke="currentColor"
-      >
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-      </svg>
-    </summary>
-
-    <p class="pt-4 text-black">
-      Dokumentasi Ziarah Wali 5 & Tour bersama Majelis Ar-Raudhah Sidoarjo. <br>
-
-        pada tanggal 08 September 2024 majelis Ar-Raudhah telah sukses mengadakan acara Ziarah Wali dengan rute :<br><br>
-        1.  Maulana Ishaq<br>
-        2. Sunan Drajat<br>
-        3. Asmoro qondi<br>
-        4. pantai kelapa ( Tuban )<br>
-        5. sunan bonang <br>
-        6. masjid namira<br>
+    <h1 class="mb-6 font-extrabold leading-tight text-white text-4xl sm:text-5xl md:text-6xl lg:text-7xl drop-shadow-[0_5px_5px_rgba(0,0,0,0.5)]">
+      Majelis Ar-Raudhah <br> <span class="text-green-300 text-3xl sm:text-4xl md:text-5xl">Sidoarjo</span>
+    </h1>
+    <p class="max-w-3xl mx-auto text-gray-100 text-base sm:text-lg md:text-xl lg:text-2xl drop-shadow-md font-light" data-aos="fade-up" data-aos-delay="500">
+      Majelis Taklim dan Sholawat <br> Yang beroperasi di daerah Waru, Sidoarjo dan sekitarnya
     </p>
-  </details>
+    <div class="mt-10" data-aos="fade-up" data-aos-delay="700">
+        <a href="#tentang" class="px-8 py-3 bg-green-500 hover:bg-green-400 text-white font-semibold rounded-full shadow-[0_0_20px_rgba(34,197,94,0.4)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_10px_30px_rgba(34,197,94,0.6)]">
+            Kenal Lebih Dekat
+        </a>
+    </div>
+  </div>
 </div>
 
-<div id="gallery" class="relative w-full p-12" data-carousel="slide">
-    <!-- Carousel wrapper -->
-    <div class="relative h-56 overflow-hidden rounded-lg md:h-96">
-         <!-- Item 1 -->
-        <div class="hidden duration-700 ease-in-out" data-carousel-item>
-            <img src="/source/foto/ziarah/_MG_0610.JPG" class="absolute block max-w-full h-auto -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="">
+<!-- Deskripsi / About -->
+<div id="tentang" class="flex justify-center px-4 py-24 bg-white relative">
+    <div data-aos="fade-up" class="flex flex-col md:flex-row items-center bg-white border border-gray-100 rounded-[2rem] shadow-2xl overflow-hidden md:max-w-6xl w-full transform transition-all duration-500 hover:shadow-[0_20px_50px_rgba(20,83,45,0.1)] group z-10">
+        <div class="w-full md:w-2/5 h-72 md:h-full relative overflow-hidden">
+            <img class="object-cover w-full h-full transform transition-transform duration-700 group-hover:scale-105" src="/source/foto/majelis.jpeg" alt="Suasana Majelis Ar-Raudhah">
         </div>
-        <!-- Item 3 -->
-        <div class="hidden duration-700 ease-in-out" data-carousel-item>
-            <img src="/source/foto/ziarah/_MG_0741.JPG" class="absolute block max-w-full h-auto -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="">
-        </div>
-        <!-- Item 4 -->
-        <div class="hidden duration-700 ease-in-out" data-carousel-item>
-            <img src="/source/foto/ziarah/_MG_0749.JPG" class="absolute block max-w-full h-auto -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="">
-        </div>
-        <!-- Item 5 -->
-        <div class="hidden duration-700 ease-in-out" data-carousel-item>
-            <img src="/source/foto/ziarah/_MG_1089.JPG" class="absolute block max-w-full h-auto -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="">
+        <div class="flex flex-col justify-center p-8 md:p-12 w-full md:w-3/5 relative bg-white">
+            <div class="absolute top-4 right-8 text-8xl text-green-50 opacity-50 select-none"><i class="fa-solid fa-quote-right"></i></div>
+            <h5 class="mb-6 text-3xl md:text-4xl font-extrabold tracking-tight text-green-900 relative">
+                Majelis Ar-Raudhah
+                <div class="w-16 h-1.5 bg-green-500 rounded-full mt-3"></div>
+            </h5>
+            <div class="text-gray-600 text-base md:text-lg font-normal leading-relaxed space-y-4">
+                <p>Majelis Ar-Raudhah adalah Majelis Taklim dan Sholawat yang didirikan oleh Ust. Wildan Suyuti S. Sos di Daerah Desa Waru, Kecamatan Waru, Kabupaten Sidoarjo pada Tahun 2016 M. Majelis ini di buat dengan tujuan Mengumpulkan anak-anak muda dan Masyarakat untuk lebih mengenal dan mencintai Rasulullah Saw melalui Kajian Islam dan Pembacaan Sholawat Nabi.</p>
+                <p>Nama Majelis Ar-Raudhah Sendiri diambil dari Nama Majelis yang didirikan oleh Seorang Ulama' Karismatik dari Bumi Kalimantan, Yaitu Syeikh Muhammad Zaini bin Abdullah Ghani atau yang akrab dikenal dengan sebutan Abah Guru Sekumpul.</p>
+            </div>
         </div>
     </div>
-    <!-- Slider controls -->
-    <button type="button" class="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-prev>
-        <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
-            <svg class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
-                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 1 1 5l4 4"/>
-            </svg>
-            <span class="sr-only">Previous</span>
-        </span>
-    </button>
-    <button type="button" class="absolute top-0 end-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-next>
-        <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
-            <svg class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
-                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
-            </svg>
-            <span class="sr-only">Next</span>
-        </span>
-    </button>
 </div>
 
-
-
-<div class="w-full text-center">
-    <span class="inline-block font-bold text-green-900 border-b-4 border-green-900 pb-1 text-2xl sm:text-3xl md:text-4xl lg:text-5xl">
-        Sholawat Nabi
-    </span>
-</div>
-
-<div class="space-y-4 px-8 pt-12">
-  <details
-    class="group rounded-s-lg border-t-4 border-green-900 bg-green-50 p-4 [&_summary::-webkit-details-marker]:hidden"
-  >
-    <summary class="flex items-center text-center justify-between gap-1.5 text-black">
-      <h2 class="text-lg font-medium ">Deskripsi</h2>
-
-      <svg
-        class="size-5 shrink-0 transition-transform duration-300 group-open:-rotate-180"
-        xmlns="http://www.w3.org/2000/svg"
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke="currentColor"
-      >
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-      </svg>
-    </summary>
-
-    <p class="pt-4 text-black">
-      
-        Dokumentasi Pembacaan Sholawat Nabi bersama Majelis Ar-Raudhah Sidoarjo. <br><br>
-
-        Sebagaimana Majelis Sholawat pada umumnya Majelis Ar-Raudhah juga sering mengadakan event" Sholawatan bersama.  Mulai dari Rutinan pembacaan maulid diba' + sholawat setiap jum'at, sampai Event Maulid Nabi, bahkan Event Haulnya para Ulama..... <br><br>
-
-        so.... lets join us... <br>
-        dan Mari Mengekspresikan kecintaan kita kepada Baginda Nabi dengan mengikuti Rutinan bersholawat Bersama Setiap Jum'at dan event" Sholawat Lainnya.....
+<!-- Visi Misi -->
+<section id="visi" class="py-24 px-4 sm:px-8 lg:px-16 bg-gray-50 relative border-y border-gray-100">
+  <div class="max-w-6xl mx-auto text-center mb-16" data-aos="fade-up">
+    <h2 class="text-3xl sm:text-4xl font-extrabold text-green-900 mb-4 inline-block relative">
+      Visi & Misi
+      <span class="absolute -bottom-3 left-1/2 -translate-x-1/2 w-16 h-1 bg-green-500 rounded-full"></span>
+    </h2>
+    <p class="text-gray-500 max-w-2xl mx-auto mt-6 text-lg">
+      Hadir sebagai wadah dakwah, pendidikan, dan pembinaan umat dengan semangat kebersamaan.
     </p>
-  </details>
-</div>
+  </div>
 
-<div id="gallery" class="relative w-full p-12" data-carousel="slide">
-    <!-- Carousel wrapper -->
-    <div class="relative h-56 overflow-hidden rounded-lg md:h-96">
-         <!-- Item 1 -->
-        <div class="hidden duration-700 ease-in-out" data-carousel-item>
-            <img src="/source/foto/sholawat nabi/IMG-20250130-WA0035 (1).jpg" class="absolute block max-w-full h-auto -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="">
+  <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10">
+      <div data-aos="fade-right" class="bg-green-900 rounded-[2rem] shadow-xl p-8 sm:p-10 transform transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-bl-full"></div>
+        <div class="w-14 h-14 bg-white/20 rounded-xl flex items-center justify-center mb-6 backdrop-blur-sm">
+            <i class="fa-solid fa-eye text-2xl text-green-300"></i>
         </div>
-        <!-- Item 2 -->
-        <div class="hidden duration-700 ease-in-out" data-carousel-item="active">
-            <img src="/source/foto/sholawat nabi/IMG-20250130-WA0058.jpg" class="absolute block max-w-full h-auto -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="">
+        <h3 class="text-3xl font-bold text-white mb-6">Visi</h3>
+        <ul class="space-y-5 text-gray-100">
+          <li class="flex items-start"><span class="text-green-400 mr-4 mt-1"><i class="fa-solid fa-star"></i></span><span class="leading-relaxed">Membentuk Generasi Qur'ani dan Berakhlak Mulia</span></li>
+          <li class="flex items-start"><span class="text-green-400 mr-4 mt-1"><i class="fa-solid fa-star"></i></span><span class="leading-relaxed">Mengenalkan kepada Masyarakat khususnya generasi muda agar Cinta kepada Rasulullah Saw dan Berharap Bisa mengikuti Sunnah Yang diajarkan oleh Nabi Muhammad Saw</span></li>
+        </ul>
+      </div>
+
+      <div data-aos="fade-left" class="bg-white rounded-[2rem] shadow-xl p-8 sm:p-10 border border-green-50 transform transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl relative">
+        <div class="w-14 h-14 bg-green-100 rounded-xl flex items-center justify-center mb-6">
+            <i class="fa-solid fa-bullseye text-2xl text-green-900"></i>
         </div>
-        <!-- Item 3 -->
-        <div class="hidden duration-700 ease-in-out" data-carousel-item>
-            <img src="/source/foto/sholawat nabi/IMG-20250130-WA0077.jpg" class="absolute block max-w-full h-auto -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="">
+        <h3 class="text-3xl font-bold text-green-900 mb-6">Misi</h3>
+        <ul class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-gray-700">
+          <li class="flex items-center p-3 bg-gray-50 rounded-xl hover:bg-green-50 transition-colors border border-transparent hover:border-green-100"><i class="fa-solid fa-book-quran text-green-500 w-6"></i><span class="font-medium ml-2">Membuka TPQ</span></li>
+          <li class="flex items-center p-3 bg-gray-50 rounded-xl hover:bg-green-50 transition-colors border border-transparent hover:border-green-100"><i class="fa-solid fa-microphone-lines text-green-500 w-6"></i><span class="font-medium ml-2">Pelatihan Tilawah</span></li>
+          <li class="flex items-center p-3 bg-gray-50 rounded-xl hover:bg-green-50 transition-colors border border-transparent hover:border-green-100"><i class="fa-solid fa-users-rays text-green-500 w-6"></i><span class="font-medium ml-2">Kajian Islam</span></li>
+          <li class="flex items-center p-3 bg-gray-50 rounded-xl hover:bg-green-50 transition-colors border border-transparent hover:border-green-100"><i class="fa-solid fa-map-location-dot text-green-500 w-6"></i><span class="font-medium ml-2">Ziarah Wali</span></li>
+          <li class="flex items-center p-3 bg-gray-50 rounded-xl hover:bg-green-50 transition-colors border border-transparent hover:border-green-100"><i class="fa-solid fa-hands-praying text-green-500 w-6"></i><span class="font-medium ml-2">Yasin & Tahlil</span></li>
+          <li class="flex items-center p-3 bg-gray-50 rounded-xl hover:bg-green-50 transition-colors border border-transparent hover:border-green-100"><i class="fa-solid fa-book-open text-green-500 w-6"></i><span class="font-medium ml-2">Khotmil Qur'an</span></li>
+        </ul>
+      </div>
+  </div>
+</section>
+
+<!-- KEGIATAN RUTINAN (REVAMPED) -->
+<section id="kegiatan" class="py-24 bg-white relative">
+    <div class="max-w-6xl mx-auto px-4 sm:px-8">
+        
+        <div class="text-center mb-16" data-aos="fade-up">
+            <h2 class="text-3xl sm:text-4xl font-extrabold text-green-900 mb-4 inline-block relative">
+                Kegiatan Rutinan
+                <span class="absolute -bottom-3 left-1/2 -translate-x-1/2 w-16 h-1 bg-green-500 rounded-full"></span>
+            </h2>
+            <p class="text-gray-500 mt-6 text-lg">Ikuti rutinan majelis untuk mencari keberkahan bersama.</p>
         </div>
-        <!-- Item 4 -->
-        <div class="hidden duration-700 ease-in-out" data-carousel-item>
-            <img src="/source/foto/sholawat nabi/IMG_5983.JPG" class="absolute block max-w-full h-auto -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="">
-        </div>
-        <!-- Item 5 -->
-        <div class="hidden duration-700 ease-in-out" data-carousel-item>
-            <img src="/source/foto/sholawat nabi/IMG_6051.JPG" class="absolute block max-w-full h-auto -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="">
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 justify-center max-w-4xl mx-auto">
+            
+            <!-- Card Kegiatan 1 -->
+            <div class="bg-white rounded-[2rem] shadow-[0_10px_30px_rgba(0,0,0,0.06)] border border-gray-100 overflow-hidden transform transition-all duration-500 hover:-translate-y-3 hover:shadow-[0_20px_40px_rgba(20,83,45,0.1)] group" data-aos="fade-up" data-aos-delay="100">
+                <div class="relative h-56 overflow-hidden">
+                    <img class="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-110" src="/source/foto/kegiatan-1.jpeg" alt="Rutinan Sholawat Diba" />
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                    <span class="absolute bottom-4 left-4 bg-green-500 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">Minggu Pertama</span>
+                </div>
+                <div class="p-8">
+                    <h5 class="mb-4 text-xl font-bold tracking-tight text-green-900 group-hover:text-green-600 transition-colors">Rutinan Pembacaan Sholawat Diba'</h5>
+                    
+                    <ul class="space-y-3 text-gray-600 text-sm mb-8">
+                        <li class="flex items-center"><div class="w-6 text-center text-green-500 mr-2"><i class="fa-solid fa-calendar-check"></i></div> <b>Hari:</b>&nbsp; Setiap Jum'at</li>
+                        <li class="flex items-center"><div class="w-6 text-center text-green-500 mr-2"><i class="fa-solid fa-clock"></i></div> <b>Waktu:</b>&nbsp; 19.00 - Selesai (Ba'da Isya)</li>
+                        <li class="flex items-start"><div class="w-6 text-center text-green-500 mr-2 mt-0.5"><i class="fa-solid fa-map-location-dot"></i></div> <span><b>Tempat:</b>&nbsp; Masjid At-Tadzkiroh PWI 2</span></li>
+                    </ul>
+                    
+                    <a href="kegiatan-1.html" class="inline-flex items-center w-full justify-center px-4 py-3 font-semibold text-green-700 bg-green-50 rounded-xl hover:bg-green-500 hover:text-white transition-all duration-300">
+                        Lihat Detail <i class="fa-solid fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Card Kegiatan 2 -->
+            <div class="bg-white rounded-[2rem] shadow-[0_10px_30px_rgba(0,0,0,0.06)] border border-gray-100 overflow-hidden transform transition-all duration-500 hover:-translate-y-3 hover:shadow-[0_20px_40px_rgba(20,83,45,0.1)] group" data-aos="fade-up" data-aos-delay="200">
+                <div class="relative h-56 overflow-hidden">
+                    <img class="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-110" src="/source/foto/poster baru.jpg" alt="Pembacaan Maulid Diba Aula" />
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                    <span class="absolute bottom-4 left-4 bg-green-900 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">Minggu Keempat</span>
+                </div>
+                <div class="p-8">
+                    <h5 class="mb-4 text-xl font-bold tracking-tight text-green-900 group-hover:text-green-600 transition-colors">Pembacaan Maulid Diba' Khusus</h5>
+                    
+                    <ul class="space-y-3 text-gray-600 text-sm mb-8">
+                        <li class="flex items-center"><div class="w-6 text-center text-green-500 mr-2"><i class="fa-solid fa-calendar-check"></i></div> <b>Hari:</b>&nbsp; Setiap Jum'at</li>
+                        <li class="flex items-center"><div class="w-6 text-center text-green-500 mr-2"><i class="fa-solid fa-clock"></i></div> <b>Waktu:</b>&nbsp; 19.00 - Selesai (Ba'da Isya)</li>
+                        <li class="flex items-start"><div class="w-6 text-center text-green-500 mr-2 mt-0.5"><i class="fa-solid fa-map-location-dot"></i></div> <span><b>Tempat:</b>&nbsp; Aula Majelis Ar-Raudhah</span></li>
+                    </ul>
+                    
+                    <a href="kegiatan-2.html" class="inline-flex items-center w-full justify-center px-4 py-3 font-semibold text-green-700 bg-green-50 rounded-xl hover:bg-green-500 hover:text-white transition-all duration-300">
+                        Lihat Detail <i class="fa-solid fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform"></i>
+                    </a>
+                </div>
+            </div>
+
         </div>
     </div>
-    <!-- Slider controls -->
-    <button type="button" class="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-prev>
-        <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
-            <svg class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
-                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 1 1 5l4 4"/>
-            </svg>
-            <span class="sr-only">Previous</span>
-        </span>
-    </button>
-    <button type="button" class="absolute top-0 end-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-next>
-        <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
-            <svg class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
-                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
-            </svg>
-            <span class="sr-only">Next</span>
-        </span>
-    </button>
-</div>
+</section>
 
-<div class="w-full text-center">
-    <span class="inline-block font-bold text-green-900 border-b-4 border-green-900 pb-1 text-2xl sm:text-3xl md:text-4xl lg:text-5xl">
-        Study Tour
-    </span>
-</div>
-
-<div class="space-y-4 px-8 pt-12">
-  <details
-    class="group rounded-s-lg border-t-4 border-green-900 bg-green-50 p-4 [&_summary::-webkit-details-marker]:hidden"
-  >
-    <summary class="flex items-center text-center justify-between gap-1.5 text-black">
-      <h2 class="text-lg font-medium ">Deskripsi</h2>
-
-      <svg
-        class="size-5 shrink-0 transition-transform duration-300 group-open:-rotate-180"
-        xmlns="http://www.w3.org/2000/svg"
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke="currentColor"
-      >
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-      </svg>
-    </summary>
-
-    <p class="pt-4 text-black">
-      Majelis Ar-Raudhah telah sukses mengadakan acara Study Tour dengan Tema Mengaji Asik Bareng Ar - Raudhah ( MABAR ). di dalam acara Tersebut peserta Study Tour Mendapatkan :<br><br>
-        1. Materi yang Bagus<br>
-        2. Kultum 7 menit setiap habis sholat<br>
-        3. Pemandu acara yang kece<br>
-        4. Pembacaan Sholawat Bersama"<br>
-        5. Senam Bersama<br>
-        6. Permainan Outbound<br>
-        7. Jodoh bila beruntung chakkss <br><br>
-        So.... ikuti keseruannya  dan tunggu event Study Tour Berikutnya.
-    </p>
-  </details>
-</div>
-
-<div class="grid grid-cols-2 md:grid-cols-4 gap-4 p-12">
-    <div class="grid gap-4">
-        <div>
-            <img class="h-auto max-w-full rounded-lg" src="/source/foto/study tour/_MG_0671.JPG" alt="">
+<!-- TALENT SECTION (Satu Halaman) -->
+<section id="talent" class="py-24 bg-gray-50 relative border-t border-gray-100">
+    <div class="absolute -right-40 top-20 w-96 h-96 bg-green-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob z-0"></div>
+    
+    <div class="max-w-6xl mx-auto px-4 sm:px-8 relative z-10">
+        <div class="text-center mb-16" data-aos="fade-up">
+            <h3 class="text-3xl md:text-4xl font-extrabold text-green-900 inline-block relative">
+              Talent & Pengurus
+              <span class="absolute -bottom-3 left-1/2 -translate-x-1/2 w-16 h-1 bg-green-500 rounded-full"></span>
+            </h3>
         </div>
-        <div>
-            <img class="h-auto max-w-full rounded-lg" src="/source/foto/study tour/_MG_0755.JPG" alt="">
+
+        <!-- 1. Card Ust. Wildan -->
+        <div class="bg-white rounded-[2.5rem] shadow-xl border border-gray-100 p-6 md:p-10 mb-16 transform transition-all hover:shadow-2xl relative" data-aos="fade-up">
+            <div class="flex flex-col lg:flex-row gap-10 items-center lg:items-start">
+                <div class="w-full lg:w-1/3 relative flex justify-center group">
+                    <div class="absolute inset-0 bg-green-100 rounded-[2rem] transform rotate-6 transition-transform duration-500 group-hover:rotate-12 z-0"></div>
+                    <img src="/source/foto/foto.png" alt="Ust. Wildan" class="relative z-10 w-full max-w-[300px] lg:max-w-full rounded-[2rem] shadow-xl object-cover h-[400px]">
+                </div>
+                <div class="w-full lg:w-2/3">
+                    <h2 class="text-3xl font-extrabold text-green-900 mb-2">Ust. Wildan Suyuti, S.Sos.</h2>
+                    <p class="text-green-600 font-semibold mb-6 flex items-center"><i class="fa-solid fa-star text-yellow-400 mr-2"></i> Pembina Majelis Ar-Raudhah</p>
+
+                    <ul class="flex flex-wrap gap-2 mb-6 border-b border-gray-100 pb-4" id="talentTab1" data-tabs-toggle="#talentTabContent1" role="tablist">
+                        <li role="presentation"><button id="about-tab" data-tabs-target="#about" type="button" role="tab" class="inline-block px-5 py-2 rounded-full text-sm font-semibold text-gray-500 bg-gray-100 hover:bg-green-100 hover:text-green-700 aria-selected:bg-green-600 aria-selected:text-white transition-all">About</button></li>
+                        <li role="presentation"><button id="edu-tab" data-tabs-target="#edu" type="button" role="tab" class="inline-block px-5 py-2 rounded-full text-sm font-semibold text-gray-500 bg-gray-100 hover:bg-green-100 hover:text-green-700 aria-selected:bg-green-600 aria-selected:text-white transition-all">Pendidikan</button></li>
+                        <li role="presentation"><button id="exp-tab" data-tabs-target="#exp" type="button" role="tab" class="inline-block px-5 py-2 rounded-full text-sm font-semibold text-gray-500 bg-gray-100 hover:bg-green-100 hover:text-green-700 aria-selected:bg-green-600 aria-selected:text-white transition-all">Pengalaman</button></li>
+                        <li role="presentation"><button id="skill-tab" data-tabs-target="#skill" type="button" role="tab" class="inline-block px-5 py-2 rounded-full text-sm font-semibold text-gray-500 bg-gray-100 hover:bg-green-100 hover:text-green-700 aria-selected:bg-green-600 aria-selected:text-white transition-all">Keterampilan</button></li>
+                    </ul>
+
+                    <div id="talentTabContent1" class="min-h-[150px]">
+                        <div class="hidden animate-fade-in" id="about" role="tabpanel">
+                            <p class="text-gray-600 leading-relaxed mb-6">Ustad Wildan merupakan Seorang Pembina dari Majelis Ar-Raudhah yang memiliki banyak Keterampilan. Beliau ahli di bidang Ruqyah, Bekam, Qori, dan Sholawat. Beliau juga memiliki track record menjadi Imam Masjid di berbagai tempat, selain itu Beliau adalah seorang Konselor yang berpengalaman.</p>
+                        </div>
+                        <div class="hidden animate-fade-in" id="edu" role="tabpanel">
+                            <ul class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-gray-700 text-sm">
+                                <li class="flex items-center"><i class="fa-solid fa-graduation-cap text-green-500 mr-2"></i> TK Muslimat Waru</li>
+                                <li class="flex items-center"><i class="fa-solid fa-graduation-cap text-green-500 mr-2"></i> MI MINU Waru 2</li>
+                                <li class="flex items-center"><i class="fa-solid fa-graduation-cap text-green-500 mr-2"></i> MTs Jabal Noer Geluran</li>
+                                <li class="flex items-center"><i class="fa-solid fa-graduation-cap text-green-500 mr-2"></i> MA Jabal Noer Geluran</li>
+                                <li class="flex items-center font-bold text-green-800"><i class="fa-solid fa-user-graduate text-green-600 mr-2"></i> S1 UIN Sunan Ampel Surabaya</li>
+                            </ul>
+                        </div>
+                        <div class="hidden animate-fade-in" id="exp" role="tabpanel">
+                            <ul class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-gray-700 text-sm">
+                                <li class="flex items-center"><i class="fa-solid fa-check-circle text-green-500 mr-2"></i> Santri House of Tilawah Al-Quran</li>
+                                <li class="flex items-center"><i class="fa-solid fa-check-circle text-green-500 mr-2"></i> Qosfada Syifa'ul Qulub UINSA</li>
+                                <li class="flex items-center"><i class="fa-solid fa-check-circle text-green-500 mr-2"></i> Ruqiyah Aswaja Indonesia</li>
+                                <li class="flex items-center"><i class="fa-solid fa-check-circle text-green-500 mr-2"></i> Khodimul Majelis Ar-Raudhah</li>
+                                <li class="flex items-center"><i class="fa-solid fa-check-circle text-green-500 mr-2"></i> Guru Qiroah UINSA & UMAHA</li>
+                                <li class="flex items-center font-bold text-green-800"><i class="fa-solid fa-trophy text-yellow-500 mr-2"></i> MTQ Tingkat Provinsi</li>
+                            </ul>
+                        </div>
+                        <div class="hidden animate-fade-in" id="skill" role="tabpanel">
+                            <div class="flex flex-wrap gap-3">
+                                <span class="px-4 py-2 bg-green-50 text-green-700 rounded-lg text-sm border border-green-200"><i class="fa-solid fa-award mr-1"></i> Ruqiyah</span>
+                                <span class="px-4 py-2 bg-green-50 text-green-700 rounded-lg text-sm border border-green-200"><i class="fa-solid fa-award mr-1"></i> Tilawah</span>
+                                <span class="px-4 py-2 bg-green-50 text-green-700 rounded-lg text-sm border border-green-200"><i class="fa-solid fa-award mr-1"></i> Konselor</span>
+                                <span class="px-4 py-2 bg-green-50 text-green-700 rounded-lg text-sm border border-green-200"><i class="fa-solid fa-award mr-1"></i> Motivator</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div>
-            <img class="h-auto max-w-full rounded-lg" src="/source/foto/study tour/_MG_1113.JPG" alt="">
+
+        <!-- 2. Card Grup Hadrah -->
+        <div class="bg-green-900 rounded-[2.5rem] shadow-xl border border-green-800 p-6 md:p-10 transform transition-all hover:shadow-2xl relative overflow-hidden" data-aos="fade-up">
+            <div class="absolute inset-0 bg-islamic opacity-10 pointer-events-none"></div>
+            <div class="flex flex-col lg:flex-row-reverse gap-10 items-center lg:items-start relative z-10">
+                <div class="w-full lg:w-1/3 relative flex justify-center group">
+                    <div class="absolute inset-0 bg-green-700 rounded-[2rem] transform -rotate-6 transition-transform duration-500 group-hover:-rotate-12 z-0"></div>
+                    <img src="/source/foto/banjari.jpeg" alt="Grup Hadrah" class="relative z-10 w-full max-w-[300px] lg:max-w-full rounded-[2rem] shadow-xl object-cover h-[400px]">
+                </div>
+                <div class="w-full lg:w-2/3">
+                    <h2 class="text-3xl font-extrabold text-white mb-2">Grup Hadrah Ar-Raudhah</h2>
+                    <p class="text-green-300 font-semibold mb-6 flex items-center"><i class="fa-solid fa-music mr-2"></i> Tim Kesenian & Selawat</p>
+
+                    <ul class="flex flex-wrap gap-2 mb-6 border-b border-green-800 pb-4" id="talentTab2" data-tabs-toggle="#talentTabContent2" role="tablist">
+                        <li role="presentation"><button id="about2-tab" data-tabs-target="#about2" type="button" role="tab" class="inline-block px-5 py-2 rounded-full text-sm font-semibold text-green-100 bg-white/10 hover:bg-white/20 hover:text-white aria-selected:bg-green-500 aria-selected:text-white transition-all">About</button></li>
+                        <li role="presentation"><button id="team-tab" data-tabs-target="#team" type="button" role="tab" class="inline-block px-5 py-2 rounded-full text-sm font-semibold text-green-100 bg-white/10 hover:bg-white/20 hover:text-white aria-selected:bg-green-500 aria-selected:text-white transition-all">Anggota Tim</button></li>
+                    </ul>
+
+                    <div id="talentTabContent2" class="min-h-[150px]">
+                        <div class="hidden animate-fade-in" id="about2" role="tabpanel">
+                            <p class="text-green-50 leading-relaxed mb-6 opacity-90">Grub Hadrah Majelis Ar-Raudhah menampilkan perpaduan irama perkusi dinamis dengan lantunan sholawat merdu, menciptakan suasana religi khidmat sekaligus penuh semangat.</p>
+                        </div>
+                        <div class="hidden animate-fade-in" id="team" role="tabpanel">
+                            <div class="grid grid-cols-2 gap-3 text-white text-sm">
+                                <div class="bg-white/10 p-3 rounded-lg"><i class="fa-solid fa-drum text-green-300 mr-2"></i> Banjari (5 Orang)</div>
+                                <div class="bg-white/10 p-3 rounded-lg"><i class="fa-solid fa-drum-steelpan text-green-300 mr-2"></i> Bass (1 Orang)</div>
+                                <div class="bg-white/10 p-3 rounded-lg"><i class="fa-solid fa-circle-notch text-green-300 mr-2"></i> Tam (2 Orang)</div>
+                                <div class="bg-white/10 p-3 rounded-lg"><i class="fa-solid fa-ring text-green-300 mr-2"></i> Darbuka (1 Orang)</div>
+                                <div class="bg-green-500 p-3 rounded-lg col-span-2 font-bold"><i class="fa-solid fa-microphone-lines text-white mr-2"></i> Tim Vokal Utama (5 Orang)</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-    <div class="grid gap-4">
-        <div>
-            <img class="h-auto max-w-full rounded-lg" src="/source/foto/study tour/_MG_1900.JPG" alt="">
+</section>
+
+<!-- DOKUMENTASI KEGIATAN (REVAMPED) -->
+<section id="dokumentasi" class="py-24 bg-white relative border-t border-gray-100">
+    <div class="max-w-6xl mx-auto px-4 sm:px-8">
+        
+        <div class="text-center mb-16" data-aos="fade-up">
+            <h2 class="text-3xl sm:text-4xl font-extrabold text-green-900 mb-4 inline-block relative">
+                Dokumentasi Kegiatan
+                <span class="absolute -bottom-3 left-1/2 -translate-x-1/2 w-16 h-1 bg-green-500 rounded-full"></span>
+            </h2>
+            <p class="text-gray-500 mt-6 text-lg">Momen-momen berharga dalam berbagai kegiatan Majelis Ar-Raudhah.</p>
         </div>
-        <div>
-            <img class="h-auto max-w-full rounded-lg" src="/source/foto/study tour/_MG_1203.JPG" alt="">
+
+        <!-- 1. Ziarah -->
+        <div class="mb-24" data-aos="fade-up">
+            <div class="flex items-center mb-8">
+                <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center text-green-600 text-xl mr-4"><i class="fa-solid fa-bus"></i></div>
+                <h3 class="text-3xl font-bold text-gray-800">Ziarah Wali</h3>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
+                <!-- Deskripsi Accordion Modern -->
+                <div class="lg:col-span-1">
+                    <details class="group bg-green-50 rounded-2xl shadow-sm border border-green-100 overflow-hidden [&_summary::-webkit-details-marker]:hidden" open>
+                        <summary class="flex cursor-pointer items-center justify-between gap-1.5 p-5 bg-green-600 text-white font-semibold">
+                            <span class="flex items-center"><i class="fa-solid fa-circle-info mr-2"></i> Deskripsi Ziarah</span>
+                            <svg class="size-5 shrink-0 transition-transform duration-300 group-open:-rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+                        </summary>
+                        <div class="p-6 text-gray-600 text-sm leading-relaxed">
+                            <p class="mb-4">Dokumentasi Ziarah Wali 5 & Tour bersama Majelis Ar-Raudhah Sidoarjo.</p>
+                            <p class="font-medium text-green-800 mb-2">Rute 08 September 2024:</p>
+                            <ul class="list-disc pl-5 space-y-1">
+                                <li>Maulana Ishaq</li>
+                                <li>Sunan Drajat</li>
+                                <li>Asmoro qondi</li>
+                                <li>Pantai Kelapa (Tuban)</li>
+                                <li>Sunan Bonang</li>
+                                <li>Masjid Namira</li>
+                            </ul>
+                        </div>
+                    </details>
+                </div>
+                
+                <!-- Carousel Ziarah -->
+                <div class="lg:col-span-2">
+                    <div id="carousel-ziarah" class="relative w-full rounded-3xl overflow-hidden shadow-xl" data-carousel="slide">
+                        <div class="relative h-64 md:h-[400px]">
+                            <div class="hidden duration-700 ease-in-out" data-carousel-item><img src="/source/foto/ziarah/_MG_0610.JPG" class="absolute block w-full h-full object-cover" alt="Ziarah 1"></div>
+                            <div class="hidden duration-700 ease-in-out" data-carousel-item><img src="/source/foto/ziarah/_MG_0741.JPG" class="absolute block w-full h-full object-cover" alt="Ziarah 2"></div>
+                            <div class="hidden duration-700 ease-in-out" data-carousel-item><img src="/source/foto/ziarah/_MG_0749.JPG" class="absolute block w-full h-full object-cover" alt="Ziarah 3"></div>
+                            <div class="hidden duration-700 ease-in-out" data-carousel-item><img src="/source/foto/ziarah/_MG_1089.JPG" class="absolute block w-full h-full object-cover" alt="Ziarah 4"></div>
+                        </div>
+                        <button type="button" class="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-prev>
+                            <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/40 group-hover:bg-white/60 focus:ring-4 focus:ring-white">
+                                <svg class="w-4 h-4 text-gray-800 rtl:rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 1 1 5l4 4"/></svg>
+                            </span>
+                        </button>
+                        <button type="button" class="absolute top-0 end-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-next>
+                            <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/40 group-hover:bg-white/60 focus:ring-4 focus:ring-white">
+                                <svg class="w-4 h-4 text-gray-800 rtl:rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/></svg>
+                            </span>
+                        </button>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div>
-            <img class="h-auto max-w-full rounded-lg" src="/source/foto/study tour/_MG_1230.JPG" alt="">
+
+        <!-- 2. Sholawat Nabi -->
+        <div class="mb-24" data-aos="fade-up">
+            <div class="flex items-center justify-end mb-8 text-right">
+                <h3 class="text-3xl font-bold text-gray-800">Sholawat Nabi</h3>
+                <div class="w-12 h-12 bg-green-900 rounded-full flex items-center justify-center text-white text-xl ml-4"><i class="fa-solid fa-moon"></i></div>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
+                <!-- Carousel Sholawat (Di kiri) -->
+                <div class="lg:col-span-2 order-2 lg:order-1">
+                    <div id="carousel-sholawat" class="relative w-full rounded-3xl overflow-hidden shadow-xl" data-carousel="slide">
+                        <div class="relative h-64 md:h-[400px]">
+                            <div class="hidden duration-700 ease-in-out" data-carousel-item><img src="/source/foto/sholawat nabi/IMG-20250130-WA0035 (1).jpg" class="absolute block w-full h-full object-cover" alt="Sholawat 1"></div>
+                            <div class="hidden duration-700 ease-in-out" data-carousel-item="active"><img src="/source/foto/sholawat nabi/IMG-20250130-WA0058.jpg" class="absolute block w-full h-full object-cover" alt="Sholawat 2"></div>
+                            <div class="hidden duration-700 ease-in-out" data-carousel-item><img src="/source/foto/sholawat nabi/IMG-20250130-WA0077.jpg" class="absolute block w-full h-full object-cover" alt="Sholawat 3"></div>
+                            <div class="hidden duration-700 ease-in-out" data-carousel-item><img src="/source/foto/sholawat nabi/IMG_5983.JPG" class="absolute block w-full h-full object-cover" alt="Sholawat 4"></div>
+                            <div class="hidden duration-700 ease-in-out" data-carousel-item><img src="/source/foto/sholawat nabi/IMG_6051.JPG" class="absolute block w-full h-full object-cover" alt="Sholawat 5"></div>
+                        </div>
+                        <button type="button" class="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-prev>
+                            <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/40 group-hover:bg-white/60 focus:ring-4 focus:ring-white"><svg class="w-4 h-4 text-gray-800" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 1 1 5l4 4"/></svg></span>
+                        </button>
+                        <button type="button" class="absolute top-0 end-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-next>
+                            <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/40 group-hover:bg-white/60 focus:ring-4 focus:ring-white"><svg class="w-4 h-4 text-gray-800" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/></svg></span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Deskripsi Accordion (Di kanan) -->
+                <div class="lg:col-span-1 order-1 lg:order-2">
+                    <details class="group bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden [&_summary::-webkit-details-marker]:hidden" open>
+                        <summary class="flex cursor-pointer items-center justify-between gap-1.5 p-5 bg-gray-100 text-green-900 font-semibold">
+                            <span class="flex items-center"><i class="fa-solid fa-circle-info mr-2"></i> Info Sholawat</span>
+                            <svg class="size-5 shrink-0 transition-transform duration-300 group-open:-rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+                        </summary>
+                        <div class="p-6 text-gray-600 text-sm leading-relaxed">
+                            <p class="mb-4">Dokumentasi Pembacaan Sholawat Nabi bersama Majelis Ar-Raudhah Sidoarjo.</p>
+                            <p class="mb-4">Sebagaimana Majelis Sholawat pada umumnya, kami juga rutin mengadakan event Sholawatan bersama. Mulai dari rutinan maulid diba' setiap Jumat, Event Maulid Nabi, hingga Haul para Ulama.</p>
+                            <p class="font-bold text-green-700 italic">So... let's join us! Mari mengekspresikan kecintaan kita kepada Baginda Nabi.</p>
+                        </div>
+                    </details>
+                </div>
+            </div>
         </div>
+
+        <!-- 3. Study Tour (Masonry Gallery) -->
+        <div data-aos="fade-up">
+            <div class="flex items-center mb-8">
+                <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center text-green-600 text-xl mr-4"><i class="fa-solid fa-campground"></i></div>
+                <h3 class="text-3xl font-bold text-gray-800">Study Tour (MABAR)</h3>
+            </div>
+            
+            <details class="group bg-green-50 rounded-2xl shadow-sm border border-green-100 overflow-hidden mb-8 [&_summary::-webkit-details-marker]:hidden">
+                <summary class="flex cursor-pointer items-center justify-between gap-1.5 p-5 bg-green-600 text-white font-semibold">
+                    <span class="flex items-center"><i class="fa-solid fa-circle-info mr-2"></i> Deskripsi Study Tour</span>
+                    <svg class="size-5 shrink-0 transition-transform duration-300 group-open:-rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+                </summary>
+                <div class="p-6 text-gray-600 text-sm md:text-base leading-relaxed">
+                    <p class="mb-4">Majelis Ar-Raudhah sukses mengadakan Study Tour bertema <b>Mengaji Asik Bareng Ar-Raudhah (MABAR)</b>. Keseruan yang didapat peserta:</p>
+                    <ul class="grid grid-cols-1 md:grid-cols-2 gap-2 list-disc pl-5 font-medium text-gray-700">
+                        <li>Materi Keislaman Berkualitas</li>
+                        <li>Kultum 7 menit ba'da sholat</li>
+                        <li>Pemandu acara yang kece</li>
+                        <li>Pembacaan Sholawat Bersama</li>
+                        <li>Senam Sehat Bersama</li>
+                        <li>Permainan Outbound Seru</li>
+                        <li class="text-green-600">Jodoh bila beruntung chakkss 😉</li>
+                    </ul>
+                </div>
+            </details>
+
+            <!-- Modern Masonry Gallery -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div class="grid gap-4">
+                    <div class="overflow-hidden rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 group cursor-pointer"><img class="h-auto max-w-full transform group-hover:scale-110 transition-transform duration-500" src="/source/foto/study tour/_MG_0671.JPG" alt="Tour"></div>
+                    <div class="overflow-hidden rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 group cursor-pointer"><img class="h-auto max-w-full transform group-hover:scale-110 transition-transform duration-500" src="/source/foto/study tour/_MG_0755.JPG" alt="Tour"></div>
+                    <div class="overflow-hidden rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 group cursor-pointer"><img class="h-auto max-w-full transform group-hover:scale-110 transition-transform duration-500" src="/source/foto/study tour/_MG_1113.JPG" alt="Tour"></div>
+                </div>
+                <div class="grid gap-4">
+                    <div class="overflow-hidden rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 group cursor-pointer"><img class="h-auto max-w-full transform group-hover:scale-110 transition-transform duration-500" src="/source/foto/study tour/_MG_1900.JPG" alt="Tour"></div>
+                    <div class="overflow-hidden rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 group cursor-pointer"><img class="h-auto max-w-full transform group-hover:scale-110 transition-transform duration-500" src="/source/foto/study tour/_MG_1203.JPG" alt="Tour"></div>
+                    <div class="overflow-hidden rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 group cursor-pointer"><img class="h-auto max-w-full transform group-hover:scale-110 transition-transform duration-500" src="/source/foto/study tour/_MG_1230.JPG" alt="Tour"></div>
+                </div>
+                <div class="grid gap-4">
+                    <div class="overflow-hidden rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 group cursor-pointer"><img class="h-auto max-w-full transform group-hover:scale-110 transition-transform duration-500" src="/source/foto/study tour/_MG_1321.JPG" alt="Tour"></div>
+                    <div class="overflow-hidden rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 group cursor-pointer"><img class="h-auto max-w-full transform group-hover:scale-110 transition-transform duration-500" src="/source/foto/study tour/_MG_1701.jpg" alt="Tour"></div>
+                    <div class="overflow-hidden rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 group cursor-pointer"><img class="h-auto max-w-full transform group-hover:scale-110 transition-transform duration-500" src="/source/foto/study tour/_MG_1725.jpg" alt="Tour"></div>
+                </div>
+                <div class="grid gap-4">
+                    <div class="overflow-hidden rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 group cursor-pointer"><img class="h-auto max-w-full transform group-hover:scale-110 transition-transform duration-500" src="/source/foto/study tour/_MG_1776.jpg" alt="Tour"></div>
+                    <div class="overflow-hidden rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 group cursor-pointer"><img class="h-auto max-w-full transform group-hover:scale-110 transition-transform duration-500" src="/source/foto/study tour/_MG_1900.jpg" alt="Tour"></div>
+                    <div class="overflow-hidden rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 group cursor-pointer"><img class="h-auto max-w-full transform group-hover:scale-110 transition-transform duration-500" src="/source/foto/study tour/_MG_0721.JPG" alt="Tour"></div>
+                </div>
+            </div>
+        </div>
+
     </div>
-    <div class="grid gap-4">
-        <div>
-            <img class="h-auto max-w-full rounded-lg" src="/source/foto/study tour/_MG_1321.JPG" alt="">
-        </div>
-        <div>
-            <img class="h-auto max-w-full rounded-lg" src="/source/foto/study tour/_MG_1701.jpg" alt="">
-        </div>
-        <div>
-            <img class="h-auto max-w-full rounded-lg" src="/source/foto/study tour/_MG_1725.jpg" alt="">
-        </div>
-    </div>
-    <div class="grid gap-4">
-        <div>
-            <img class="h-auto max-w-full rounded-lg" src="/source/foto/study tour/_MG_1776.jpg" alt="">
-        </div>
-        <div>
-            <img class="h-auto max-w-full rounded-lg" src="/source/foto/study tour/_MG_1900.jpg" alt="">
-        </div>
-        <div>
-            <img class="h-auto max-w-full rounded-lg" src="/source/foto/study tour/_MG_0721.JPG" alt="">
-        </div>
-    </div>
-</div>
-<!--Dokuemnteer Kegiatan-->
+</section>
 
-
-<!--Footer-->
-
-
-<footer class="bg-white rounded-lg shadow-sm dark:bg-green-900 m-4">
-    <div class="w-full max-w-screen-xl mx-auto p-8 md:py-8">
+<!-- Footer -->
+<footer class="bg-green-900 border-t border-green-800">
+    <div class="w-full max-w-screen-xl mx-auto p-6 md:py-10">
         <div class="sm:flex sm:items-center sm:justify-between">
-            <a href="index.html" class="flex items-center mb-4 sm:mb-0 space-x-3 rtl:space-x-reverse">
-                <img src="/source/foto/logo.png" class="h-12" alt="Majelis Logo" />
-                <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Majelis Ar-Raudhah</span>
+            <a href="#beranda" class="flex items-center mb-6 sm:mb-0 space-x-3 group">
+                <img src="/source/foto/logo.png" class="h-12 transform transition-transform group-hover:rotate-12 bg-white rounded-full p-1" alt="Majelis Logo" />
+                <span class="self-center text-2xl font-bold text-white whitespace-nowrap">Majelis Ar-Raudhah</span>
             </a>
-            <ul class="flex flex-wrap items-center mb-6 text-sm font-medium text-white sm:mb-0 dark:text-white">
-                <li>
-                    <a href="https://www.tiktok.com/@majelis_ar_raudhah?_t=ZS-8ydtNaL3P6n&_r=1" class="hover:underline me-4 md:me-6">Tiktok</a>
-                </li>
-                <li>
-                    <a href="https://www.instagram.com/majelisarraudhahsidoarjo?igsh=MTJiZTgwZ2R4eTh4OA==" class="hover:underline me-4 md:me-6">Instagram</a>
-                </li>
-                <li>
-                    <a href="https://wa.me/6282143464071" target="_blank" class="hover:underline">Contact</a>
-                </li>
+            <ul class="flex flex-wrap items-center mb-6 text-sm font-medium text-green-100 sm:mb-0">
+                <li><a href="https://www.tiktok.com/@majelis_ar_raudhah?_t=ZS-8ydtNaL3P6n&_r=1" target="_blank" class="hover:text-white transition-colors me-4 md:me-6 flex items-center"><i class="fa-brands fa-tiktok text-lg mr-2"></i> TikTok</a></li>
+                <li><a href="https://www.instagram.com/majelisarraudhahsidoarjo?igsh=MTJiZTgwZ2R4eTh4OA==" target="_blank" class="hover:text-white transition-colors me-4 md:me-6 flex items-center"><i class="fa-brands fa-instagram text-lg mr-2"></i> Instagram</a></li>
+                <li><a href="https://wa.me/6282143464071" target="_blank" class="hover:text-green-900 transition-colors flex items-center bg-white hover:bg-green-100 px-4 py-2 rounded-full font-bold"><i class="fa-brands fa-whatsapp text-lg mr-2 text-green-600"></i> Contact Us</a></li>
             </ul>
         </div>
-        <hr class="my-6 border-gray-200 sm:mx-auto dark:border-white-700 lg:my-8" />
-        <span class="block text-sm text-white sm:text-center dark:text-white">© 2025 <a href="index.html" class="hover:underline">Majelis Ar-Raudhah™</a>. All Rights Reserved.</span>
+        <hr class="my-6 border-green-800 sm:mx-auto lg:my-8" />
+        <span class="block text-sm text-green-200 sm:text-center">© 2025 <a href="#beranda" class="hover:text-white font-semibold transition-colors">Majelis Ar-Raudhah™</a>. All Rights Reserved.</span>
     </div>
 </footer>
 
-
-<!--Footer-->
-
+<!-- Flowbite JS -->
 <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
+
+<!-- AOS JS (Animation) -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+<!-- Custom Vanilla JS -->
+<script>
+    // Inisialisasi AOS Animation
+    AOS.init({
+        once: true,
+        offset: 50,
+        duration: 800,
+    });
+
+    // Logic Navbar Glassmorphism yang Stabil
+    const navContainer = document.getElementById('nav-container');
+
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+            navContainer.classList.add('bg-green-900/90', 'backdrop-blur-lg', 'shadow-2xl', 'border', 'border-white/10');
+            navContainer.classList.remove('py-3');
+            navContainer.classList.add('py-2');
+        } else {
+            navContainer.classList.remove('bg-green-900/90', 'backdrop-blur-lg', 'shadow-2xl', 'border', 'border-white/10');
+            navContainer.classList.remove('py-2');
+            navContainer.classList.add('py-3');
+        }
+    });
+
+    // Custom Tailwind & Animasi CSS
+    tailwind.config = {
+        theme: {
+            extend: {
+                animation: {
+                    'fade-in': 'fadeIn 0.5s ease-out forwards',
+                },
+                keyframes: {
+                    fadeIn: {
+                        '0%': { opacity: '0', transform: 'translateY(10px)' },
+                        '100%': { opacity: '1', transform: 'translateY(0)' },
+                    }
+                }
+            }
+        }
+    }
+</script>
+
+<style>
+    .animate-fade-in { animation: fadeIn 0.4s ease-out forwards; }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
+</style>
+
 </body>
 </html>
