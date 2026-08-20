@@ -203,7 +203,7 @@
 <!-- End Visi Misi -->
 
 
-<!-- Kegiatan (3D Timeline Diperbaiki) -->
+<!-- Kegiatan (3D Timeline Presisi 100%) -->
 <div class="w-full bg-white py-24 relative overflow-hidden">
   <div class="max-w-5xl mx-auto px-4 sm:px-8">
       
@@ -215,15 +215,23 @@
       </div>
 
       <!-- Timeline Container Modern -->
-      <div class="relative wrap overflow-hidden p-2">
+      <div class="relative w-full mx-auto py-4">
         
-        <!-- Garis Tengah yang Presisi -->
-        <div class="absolute h-full w-1 bg-green-100 left-8 md:left-1/2 transform md:-translate-x-1/2 top-0 rounded-full"></div>
+        <!-- Garis Tengah yang DIJAMIN Presisi -->
+        <!-- Menggunakan left-[3rem] di mobile dan left-1/2 di desktop. 
+             Wajib ada -translate-x-1/2 agar presisi membelah piksel tengah -->
+        <div class="absolute h-full w-1 bg-green-200 left-[3rem] md:left-1/2 top-0 -translate-x-1/2 rounded-full z-0"></div>
 
         <!-- Item 1 (Kiri di Desktop) -->
-        <div class="relative flex flex-col md:flex-row items-center justify-between mb-16 w-full" data-aos="fade-up">
+        <div class="relative flex items-center justify-between w-full mb-16" data-aos="fade-up">
+            
+            <!-- Icon Point (Terkunci presisi di tengah vertikal dan horizontal) -->
+            <div class="absolute left-[3rem] md:left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center justify-center w-14 h-14 bg-green-500 rounded-full border-4 border-white shadow-xl z-20">
+                <i class="fa-solid fa-chalkboard-user text-white text-xl"></i>
+            </div>
+            
             <!-- Card -->
-            <div class="w-full md:w-[45%] pl-20 md:pl-0 text-left md:text-right">
+            <div class="w-full md:w-[45%] pl-[6.5rem] md:pl-0 text-left md:text-right z-10">
                 <div class="bg-white p-6 md:p-8 rounded-2xl shadow-[0_10px_30px_rgba(0,0,0,0.08)] border border-gray-100 transform transition-all duration-300 hover:-translate-y-2 hover:shadow-xl group relative overflow-hidden">
                     <div class="absolute -right-6 -top-6 w-24 h-24 bg-green-50 rounded-full -z-10 transition-transform duration-500 group-hover:scale-150"></div>
                     <h3 class="text-2xl font-bold text-green-900 mb-3">Kajian</h3>
@@ -236,27 +244,22 @@
                 </div>
             </div>
             
-            <!-- PERBAIKAN: Penambahan top-1/2 dan -translate-y-1/2 biar icon otomatis rata tengah -->
-            <div class="absolute left-8 md:left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 flex items-center justify-center w-12 h-12 bg-green-500 rounded-full border-4 border-white shadow-lg z-10">
-                <i class="fa-solid fa-chalkboard-user text-white text-lg"></i>
-            </div>
-            
-            <!-- Spacer Kosong -->
-            <div class="w-full md:w-[45%] hidden md:block"></div>
+            <!-- Spacer Kosong untuk menggeser Card ke Kiri di Desktop -->
+            <div class="w-full md:w-[45%] hidden md:block z-10"></div>
         </div>
 
         <!-- Item 2 (Kanan di Desktop) -->
-        <div class="relative flex flex-col md:flex-row items-center justify-between mb-16 w-full" data-aos="fade-up">
-            <!-- Spacer Kosong -->
-            <div class="w-full md:w-[45%] hidden md:block"></div>
+        <div class="relative flex items-center justify-between w-full mb-16" data-aos="fade-up">
+            <!-- Spacer Kosong untuk menggeser Card ke Kanan di Desktop -->
+            <div class="w-full md:w-[45%] hidden md:block z-10"></div>
             
-            <!-- PERBAIKAN: Penambahan top-1/2 dan -translate-y-1/2 biar icon otomatis rata tengah -->
-            <div class="absolute left-8 md:left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 flex items-center justify-center w-12 h-12 bg-green-900 rounded-full border-4 border-white shadow-lg z-10">
-                <i class="fa-solid fa-drum text-white text-lg"></i>
+            <!-- Icon Point -->
+            <div class="absolute left-[3rem] md:left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center justify-center w-14 h-14 bg-green-900 rounded-full border-4 border-white shadow-xl z-20">
+                <i class="fa-solid fa-drum text-white text-xl"></i>
             </div>
             
             <!-- Card -->
-            <div class="w-full md:w-[45%] pl-20 md:pl-0 text-left">
+            <div class="w-full md:w-[45%] pl-[6.5rem] md:pl-0 text-left z-10">
                 <div class="bg-green-900 p-6 md:p-8 rounded-2xl shadow-[0_10px_30px_rgba(20,83,45,0.2)] transform transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl group relative overflow-hidden">
                     <div class="absolute -left-6 -bottom-6 w-24 h-24 bg-white/5 rounded-full z-0 transition-transform duration-500 group-hover:scale-150"></div>
                     <h3 class="text-2xl font-bold text-white mb-3 relative z-10">Pembacaan Maulid Diba'</h3>
@@ -271,9 +274,15 @@
         </div>
 
         <!-- Item 3 (Kiri di Desktop) -->
-        <div class="relative flex flex-col md:flex-row items-center justify-between w-full" data-aos="fade-up">
+        <div class="relative flex items-center justify-between w-full mb-16" data-aos="fade-up">
+            
+            <!-- Icon Point -->
+            <div class="absolute left-[3rem] md:left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center justify-center w-14 h-14 bg-green-500 rounded-full border-4 border-white shadow-xl z-20">
+                <i class="fa-solid fa-bus text-white text-xl"></i>
+            </div>
+            
             <!-- Card -->
-            <div class="w-full md:w-[45%] pl-20 md:pl-0 text-left md:text-right">
+            <div class="w-full md:w-[45%] pl-[6.5rem] md:pl-0 text-left md:text-right z-10">
                 <div class="bg-white p-6 md:p-8 rounded-2xl shadow-[0_10px_30px_rgba(0,0,0,0.08)] border border-gray-100 transform transition-all duration-300 hover:-translate-y-2 hover:shadow-xl group relative overflow-hidden">
                     <div class="absolute -right-6 -top-6 w-24 h-24 bg-green-50 rounded-full -z-10 transition-transform duration-500 group-hover:scale-150"></div>
                     <h3 class="text-2xl font-bold text-green-900 mb-3">Ziarah Wali</h3>
@@ -286,13 +295,8 @@
                 </div>
             </div>
             
-            <!-- PERBAIKAN: Penambahan top-1/2 dan -translate-y-1/2 biar icon otomatis rata tengah -->
-            <div class="absolute left-8 md:left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 flex items-center justify-center w-12 h-12 bg-green-500 rounded-full border-4 border-white shadow-lg z-10">
-                <i class="fa-solid fa-bus text-white text-lg"></i>
-            </div>
-            
-            <!-- Spacer Kosong -->
-            <div class="w-full md:w-[45%] hidden md:block"></div>
+            <!-- Spacer -->
+            <div class="w-full md:w-[45%] hidden md:block z-10"></div>
         </div>
 
       </div>
